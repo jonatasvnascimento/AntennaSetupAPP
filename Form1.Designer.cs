@@ -31,14 +31,16 @@ namespace AntennaSetupAPP
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonConfigurarCFG = new System.Windows.Forms.Button();
+            this.buttonGerarCFG = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.buttonGerarCFG);
+            this.panelMenu.Controls.Add(this.buttonConfigurarCFG);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -55,20 +57,35 @@ namespace AntennaSetupAPP
             this.panelLogo.Size = new System.Drawing.Size(200, 100);
             this.panelLogo.TabIndex = 0;
             // 
-            // button1
+            // buttonConfigurarCFG
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Configurar CFG";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonConfigurarCFG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.buttonConfigurarCFG.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonConfigurarCFG.FlatAppearance.BorderSize = 0;
+            this.buttonConfigurarCFG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfigurarCFG.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonConfigurarCFG.ForeColor = System.Drawing.Color.White;
+            this.buttonConfigurarCFG.Location = new System.Drawing.Point(0, 100);
+            this.buttonConfigurarCFG.Name = "buttonConfigurarCFG";
+            this.buttonConfigurarCFG.Size = new System.Drawing.Size(200, 34);
+            this.buttonConfigurarCFG.TabIndex = 1;
+            this.buttonConfigurarCFG.Text = "Configurar CFG";
+            this.buttonConfigurarCFG.UseVisualStyleBackColor = false;
+            // 
+            // buttonGerarCFG
+            // 
+            this.buttonGerarCFG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.buttonGerarCFG.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGerarCFG.FlatAppearance.BorderSize = 0;
+            this.buttonGerarCFG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGerarCFG.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonGerarCFG.ForeColor = System.Drawing.Color.White;
+            this.buttonGerarCFG.Location = new System.Drawing.Point(0, 134);
+            this.buttonGerarCFG.Name = "buttonGerarCFG";
+            this.buttonGerarCFG.Size = new System.Drawing.Size(200, 34);
+            this.buttonGerarCFG.TabIndex = 2;
+            this.buttonGerarCFG.Text = "Gerar CFG";
+            this.buttonGerarCFG.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -80,6 +97,7 @@ namespace AntennaSetupAPP
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -89,7 +107,8 @@ namespace AntennaSetupAPP
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonConfigurarCFG;
+        private System.Windows.Forms.Button buttonGerarCFG;
     }
 }
 
