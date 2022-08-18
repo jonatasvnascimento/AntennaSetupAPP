@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AntennaSetupAPP.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,35 +58,6 @@ namespace AntennaSetupAPP
            
         }
 
-        //private void ActiveButton(object btnSender)
-        //{
-        //    if (btnSender != null)
-        //    {
-        //        if (currentbutton != (Button)btnSender)
-        //        {
-        //            DisableButton();
-        //            Color color = Color.FromName("Blue");
-        //            currentbutton = (Button)btnSender;
-        //            currentbutton.BackColor = color;
-        //            currentbutton.ForeColor = Color.White;
-        //            currentbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-        //        }
-
-        //    }
-        //}
-
-        //private void DisableButton()
-        //{
-        //    foreach(Control btn in panelMenu.Controls)
-        //    {
-        //        if (btn.GetType() == typeof(Button))
-        //        {
-        //            btn.BackColor = Color.FromArgb(51,51,51);
-        //            currentbutton.ForeColor = Color.White;
-        //            currentbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-        //        }
-        //    }
-        //}
 
         [System.Runtime.InteropServices.DllImport("dwmapi.dll")]
         public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd, ref MARGINS pMarInset);
@@ -171,15 +143,12 @@ namespace AntennaSetupAPP
 
         private void buttonConfigurarCFG_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new FormConfigurarCNX(), sender);
         }
 
         private void buttonGerarCFG_Click(object sender, EventArgs e)
         {
-        }
-
-        private void labelTitulo_Click(object sender, EventArgs e)
-        {
-
+            OpenChildForm(new FormGerarCNX(), sender);
         }
     }
 }
