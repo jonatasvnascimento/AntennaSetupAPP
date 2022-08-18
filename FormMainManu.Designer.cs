@@ -62,7 +62,7 @@ namespace AntennaSetupAPP
             this.buttonGerarCNX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGerarCNX.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonGerarCNX.ForeColor = System.Drawing.Color.White;
-            this.buttonGerarCNX.Location = new System.Drawing.Point(0, 106);
+            this.buttonGerarCNX.Location = new System.Drawing.Point(0, 100);
             this.buttonGerarCNX.Name = "buttonGerarCNX";
             this.buttonGerarCNX.Size = new System.Drawing.Size(200, 34);
             this.buttonGerarCNX.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace AntennaSetupAPP
             this.buttonConfigurarCNX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfigurarCNX.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonConfigurarCNX.ForeColor = System.Drawing.Color.White;
-            this.buttonConfigurarCNX.Location = new System.Drawing.Point(0, 72);
+            this.buttonConfigurarCNX.Location = new System.Drawing.Point(0, 66);
             this.buttonConfigurarCNX.Name = "buttonConfigurarCNX";
             this.buttonConfigurarCNX.Size = new System.Drawing.Size(200, 34);
             this.buttonConfigurarCNX.TabIndex = 1;
@@ -93,7 +93,7 @@ namespace AntennaSetupAPP
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 72);
+            this.panelLogo.Size = new System.Drawing.Size(200, 66);
             this.panelLogo.TabIndex = 0;
             // 
             // label1
@@ -102,7 +102,7 @@ namespace AntennaSetupAPP
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 22);
+            this.label1.Location = new System.Drawing.Point(40, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 22);
             this.label1.TabIndex = 1;
@@ -110,21 +110,20 @@ namespace AntennaSetupAPP
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.panel1.Controls.Add(this.labelTitulo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(200, 0);
+            this.panel1.Location = new System.Drawing.Point(200, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(769, 72);
+            this.panel1.Size = new System.Drawing.Size(769, 44);
             this.panel1.TabIndex = 1;
             // 
             // labelTitulo
             // 
-            this.labelTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelTitulo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelTitulo.ForeColor = System.Drawing.Color.White;
-            this.labelTitulo.Location = new System.Drawing.Point(350, 22);
+            this.labelTitulo.Location = new System.Drawing.Point(0, 0);
             this.labelTitulo.Name = "labelTitulo";
             this.labelTitulo.Size = new System.Drawing.Size(41, 17);
             this.labelTitulo.TabIndex = 0;
@@ -132,10 +131,12 @@ namespace AntennaSetupAPP
             // 
             // panelDesktopPanel
             // 
-            this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(200, 72);
+            this.panelDesktopPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDesktopPanel.Location = new System.Drawing.Point(200, 66);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(769, 460);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(769, 466);
             this.panelDesktopPanel.TabIndex = 2;
             // 
             // FormMainManu
@@ -148,8 +149,11 @@ namespace AntennaSetupAPP
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMainManu";
-            this.Text = "s";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FormMainManu";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
