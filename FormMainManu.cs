@@ -10,19 +10,8 @@ using System.Windows.Forms;
 
 namespace AntennaSetupAPP
 {
-    public partial class Form1 : Form
+    public partial class FormMainManu : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-            m_aeroEnabled = false;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private bool Drag;
         private int MouseX;
         private int MouseY;
@@ -36,6 +25,67 @@ namespace AntennaSetupAPP
         private const int CS_DROPSHADOW = 0x00020000;
         private const int WM_NCPAINT = 0x0085;
         private const int WM_ACTIVATEAPP = 0x001C;
+
+        private Form activeForm;
+        private Button currentbutton;
+
+        public FormMainManu()
+        {
+            InitializeComponent();
+            m_aeroEnabled = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.panelDesktopPanel.Controls.Add(childForm);
+            this.panelDesktopPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            labelTitulo.Text = childForm.Text;
+           
+        }
+
+        //private void ActiveButton(object btnSender)
+        //{
+        //    if (btnSender != null)
+        //    {
+        //        if (currentbutton != (Button)btnSender)
+        //        {
+        //            DisableButton();
+        //            Color color = Color.FromName("Blue");
+        //            currentbutton = (Button)btnSender;
+        //            currentbutton.BackColor = color;
+        //            currentbutton.ForeColor = Color.White;
+        //            currentbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        //        }
+
+        //    }
+        //}
+
+        //private void DisableButton()
+        //{
+        //    foreach(Control btn in panelMenu.Controls)
+        //    {
+        //        if (btn.GetType() == typeof(Button))
+        //        {
+        //            btn.BackColor = Color.FromArgb(51,51,51);
+        //            currentbutton.ForeColor = Color.White;
+        //            currentbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        //        }
+        //    }
+        //}
 
         [System.Runtime.InteropServices.DllImport("dwmapi.dll")]
         public static extern int DwmExtendFrameIntoClientArea(IntPtr hWnd, ref MARGINS pMarInset);
@@ -118,5 +168,18 @@ namespace AntennaSetupAPP
             }
         }
         private void PanelMove_MouseUp(object sender, MouseEventArgs e) { Drag = false; }
+
+        private void buttonConfigurarCFG_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonGerarCFG_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void labelTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
