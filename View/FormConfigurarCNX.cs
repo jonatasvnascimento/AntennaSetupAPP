@@ -21,6 +21,5 @@ namespace AntennaSetupAPP.View
         {
 
         }
-
     }
 }

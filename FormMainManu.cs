@@ -149,6 +149,10 @@ namespace AntennaSetupAPP
         {
             OpenChildForm(new FormGerarCNX(), sender);
         }
-       
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

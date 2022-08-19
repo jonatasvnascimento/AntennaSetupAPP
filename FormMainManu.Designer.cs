@@ -30,6 +30,7 @@ namespace AntennaSetupAPP
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonSair = new System.Windows.Forms.Button();
             this.buttonGerarCNX = new System.Windows.Forms.Button();
             this.buttonConfigurarCNX = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -45,14 +46,31 @@ namespace AntennaSetupAPP
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.panelMenu.Controls.Add(this.buttonSair);
             this.panelMenu.Controls.Add(this.buttonGerarCNX);
             this.panelMenu.Controls.Add(this.buttonConfigurarCNX);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 532);
+            this.panelMenu.Size = new System.Drawing.Size(200, 659);
             this.panelMenu.TabIndex = 0;
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.buttonSair.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonSair.FlatAppearance.BorderSize = 0;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSair.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSair.ForeColor = System.Drawing.Color.White;
+            this.buttonSair.Location = new System.Drawing.Point(0, 625);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(200, 34);
+            this.buttonSair.TabIndex = 3;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // buttonGerarCNX
             // 
@@ -136,7 +154,7 @@ namespace AntennaSetupAPP
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktopPanel.Location = new System.Drawing.Point(200, 66);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(769, 466);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(879, 593);
             this.panelDesktopPanel.TabIndex = 2;
             // 
             // FormMainManu
@@ -144,10 +162,11 @@ namespace AntennaSetupAPP
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(969, 532);
+            this.ClientSize = new System.Drawing.Size(1079, 659);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -174,6 +193,7 @@ namespace AntennaSetupAPP
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelDesktopPanel;
+        private System.Windows.Forms.Button buttonSair;
     }
 }
 
