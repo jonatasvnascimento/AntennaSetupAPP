@@ -62,6 +62,15 @@ namespace AntennaSetupAPP.View
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -199,7 +208,7 @@ namespace AntennaSetupAPP.View
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(343, 73);
+            this.label10.Location = new System.Drawing.Point(13, 405);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 15);
             this.label10.TabIndex = 15;
@@ -208,7 +217,7 @@ namespace AntennaSetupAPP.View
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(349, 109);
+            this.label11.Location = new System.Drawing.Point(13, 449);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(111, 15);
             this.label11.TabIndex = 16;
@@ -217,7 +226,7 @@ namespace AntennaSetupAPP.View
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(349, 144);
+            this.label12.Location = new System.Drawing.Point(262, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 15);
             this.label12.TabIndex = 17;
@@ -319,29 +328,93 @@ namespace AntennaSetupAPP.View
             // 
             this.textBox4.Location = new System.Drawing.Point(19, 379);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(41, 23);
+            this.textBox4.Size = new System.Drawing.Size(40, 23);
             this.textBox4.TabIndex = 31;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(66, 379);
+            this.textBox5.Location = new System.Drawing.Point(65, 379);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(42, 23);
+            this.textBox5.Size = new System.Drawing.Size(40, 23);
             this.textBox5.TabIndex = 32;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(114, 379);
+            this.textBox6.Location = new System.Drawing.Point(111, 379);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(40, 23);
             this.textBox6.TabIndex = 33;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(160, 379);
+            this.textBox7.Location = new System.Drawing.Point(158, 379);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(38, 23);
+            this.textBox7.Size = new System.Drawing.Size(40, 23);
             this.textBox7.TabIndex = 34;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(158, 423);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(40, 23);
+            this.textBox8.TabIndex = 38;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(111, 423);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(40, 23);
+            this.textBox9.TabIndex = 37;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(65, 423);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(40, 23);
+            this.textBox10.TabIndex = 36;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(19, 423);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(40, 23);
+            this.textBox11.TabIndex = 35;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(158, 467);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(40, 23);
+            this.textBox12.TabIndex = 42;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(111, 467);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(40, 23);
+            this.textBox13.TabIndex = 41;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(65, 467);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(40, 23);
+            this.textBox14.TabIndex = 40;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(19, 467);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(40, 23);
+            this.textBox15.TabIndex = 39;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.label18.Location = new System.Drawing.Point(211, 12);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(1, 568);
+            this.label18.TabIndex = 43;
             // 
             // FormConfigurarCNX
             // 
@@ -349,6 +422,15 @@ namespace AntennaSetupAPP.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(879, 593);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -424,5 +506,14 @@ namespace AntennaSetupAPP.View
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label18;
     }
 }

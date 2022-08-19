@@ -34,6 +34,7 @@ namespace AntennaSetupAPP
             this.buttonGerarCNX = new System.Windows.Forms.Button();
             this.buttonConfigurarCNX = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.labelVersion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitulo = new System.Windows.Forms.Label();
@@ -107,12 +108,24 @@ namespace AntennaSetupAPP
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panelLogo.Controls.Add(this.labelVersion);
             this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(200, 66);
             this.panelLogo.TabIndex = 0;
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVersion.Location = new System.Drawing.Point(3, 4);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(46, 13);
+            this.labelVersion.TabIndex = 4;
+            this.labelVersion.Text = "Jonatas";
+            this.labelVersion.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.labelVersion_MouseDoubleClick);
             // 
             // label1
             // 
@@ -128,11 +141,13 @@ namespace AntennaSetupAPP
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.panel1.Controls.Add(this.labelTitulo);
             this.panel1.Location = new System.Drawing.Point(200, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(769, 44);
+            this.panel1.Size = new System.Drawing.Size(879, 44);
             this.panel1.TabIndex = 1;
             // 
             // labelTitulo
@@ -194,6 +209,7 @@ namespace AntennaSetupAPP
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelDesktopPanel;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Label labelVersion;
     }
 }
 

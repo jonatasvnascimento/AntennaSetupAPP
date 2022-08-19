@@ -30,6 +30,8 @@ namespace AntennaSetupAPP
         private Form activeForm;
         private Button currentbutton;
 
+        private string Version = "1.0.0.0";
+
         public FormMainManu()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace AntennaSetupAPP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            labelVersion.Text = Version;
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
@@ -153,6 +156,18 @@ namespace AntennaSetupAPP
         private void buttonSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void labelVersion_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (labelVersion.Text == "Jonatas")
+            {
+                labelVersion.Text = Version;
+            }
+            else
+            {
+                labelVersion.Text = "Jonatas";
+            }
         }
     }
 }
