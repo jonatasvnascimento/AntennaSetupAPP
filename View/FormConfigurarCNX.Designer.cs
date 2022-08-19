@@ -71,6 +71,24 @@ namespace AntennaSetupAPP.View
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.label20 = new System.Windows.Forms.Label();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.label22 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -190,7 +208,7 @@ namespace AntennaSetupAPP.View
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 316);
+            this.label8.Location = new System.Drawing.Point(10, 316);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 15);
             this.label8.TabIndex = 13;
@@ -199,7 +217,7 @@ namespace AntennaSetupAPP.View
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 361);
+            this.label9.Location = new System.Drawing.Point(10, 361);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 15);
             this.label9.TabIndex = 14;
@@ -208,7 +226,7 @@ namespace AntennaSetupAPP.View
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 405);
+            this.label10.Location = new System.Drawing.Point(10, 405);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 15);
             this.label10.TabIndex = 15;
@@ -217,7 +235,7 @@ namespace AntennaSetupAPP.View
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 449);
+            this.label11.Location = new System.Drawing.Point(10, 449);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(111, 15);
             this.label11.TabIndex = 16;
@@ -226,7 +244,7 @@ namespace AntennaSetupAPP.View
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(262, 12);
+            this.label12.Location = new System.Drawing.Point(227, 52);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 15);
             this.label12.TabIndex = 17;
@@ -235,7 +253,7 @@ namespace AntennaSetupAPP.View
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(343, 416);
+            this.label13.Location = new System.Drawing.Point(227, 228);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 15);
             this.label13.TabIndex = 18;
@@ -244,7 +262,7 @@ namespace AntennaSetupAPP.View
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(343, 361);
+            this.label14.Location = new System.Drawing.Point(227, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(98, 15);
             this.label14.TabIndex = 19;
@@ -253,7 +271,7 @@ namespace AntennaSetupAPP.View
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(343, 285);
+            this.label15.Location = new System.Drawing.Point(227, 140);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(119, 15);
             this.label15.TabIndex = 20;
@@ -262,7 +280,7 @@ namespace AntennaSetupAPP.View
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(343, 459);
+            this.label16.Location = new System.Drawing.Point(227, 272);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(63, 15);
             this.label16.TabIndex = 21;
@@ -271,7 +289,7 @@ namespace AntennaSetupAPP.View
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(343, 194);
+            this.label17.Location = new System.Drawing.Point(227, 96);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(92, 15);
             this.label17.TabIndex = 22;
@@ -416,12 +434,204 @@ namespace AntennaSetupAPP.View
             this.label18.Size = new System.Drawing.Size(1, 568);
             this.label18.TabIndex = 43;
             // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(236, 70);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(179, 23);
+            this.textBox16.TabIndex = 44;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(236, 114);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(179, 23);
+            this.textBox17.TabIndex = 45;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(236, 158);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(47, 19);
+            this.radioButton4.TabIndex = 46;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "True";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(291, 158);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(51, 19);
+            this.radioButton5.TabIndex = 47;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "False";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(236, 202);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(179, 23);
+            this.textBox18.TabIndex = 48;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(236, 246);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(179, 23);
+            this.textBox19.TabIndex = 49;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(250, 293);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 15);
+            this.label19.TabIndex = 50;
+            this.label19.Text = "Antena 1";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(321, 316);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(51, 19);
+            this.radioButton6.TabIndex = 52;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "False";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(266, 316);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(47, 19);
+            this.radioButton7.TabIndex = 51;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "True";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(321, 357);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(51, 19);
+            this.radioButton8.TabIndex = 55;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "False";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(266, 357);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(47, 19);
+            this.radioButton9.TabIndex = 54;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "True";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(250, 334);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(54, 15);
+            this.label20.TabIndex = 53;
+            this.label20.Text = "Antena 2";
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(321, 401);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(51, 19);
+            this.radioButton10.TabIndex = 58;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "False";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(266, 401);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(47, 19);
+            this.radioButton11.TabIndex = 57;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "True";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(250, 378);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(54, 15);
+            this.label21.TabIndex = 56;
+            this.label21.Text = "Antena 3";
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(321, 447);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(51, 19);
+            this.radioButton12.TabIndex = 61;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "False";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(266, 447);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(47, 19);
+            this.radioButton13.TabIndex = 60;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "True";
+            this.radioButton13.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(250, 424);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(54, 15);
+            this.label22.TabIndex = 59;
+            this.label22.Text = "Antena 4";
+            // 
             // FormConfigurarCNX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(879, 593);
+            this.Controls.Add(this.radioButton12);
+            this.Controls.Add(this.radioButton13);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.radioButton10);
+            this.Controls.Add(this.radioButton11);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.radioButton8);
+            this.Controls.Add(this.radioButton9);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.radioButton7);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.textBox19);
+            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.textBox16);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox13);
@@ -515,5 +725,23 @@ namespace AntennaSetupAPP.View
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.Label label22;
     }
 }
