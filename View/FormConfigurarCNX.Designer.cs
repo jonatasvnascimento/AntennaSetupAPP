@@ -270,6 +270,7 @@ namespace AntennaSetupAPP.View
             this.textBoxIPAddress.Name = "textBoxIPAddress";
             this.textBoxIPAddress.Size = new System.Drawing.Size(179, 23);
             this.textBoxIPAddress.TabIndex = 23;
+            this.textBoxIPAddress.TextChanged += new System.EventHandler(this.textBoxIPAddress_TextChanged);
             // 
             // comboBoxIPPort
             // 

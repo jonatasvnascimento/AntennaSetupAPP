@@ -14,6 +14,24 @@ namespace AntennaSetupAPP.View
 {
     public partial class FormConfigurarCNX : Form
     {
+        string vConnectionMode;
+        string vName;
+        string vIPAddress;
+        string vIPPort;
+        string vIPPortA;
+        string vComPort;
+        string vInitialBaudRate;
+        string vFinalBaudRate;
+        List<int> vKanbanAntenaList;
+        List<int> vPositionAntenaList;
+        List<int> vDirectionAntenaList;
+        string vAliveTagList;
+        string vImproperTagList;
+        bool vSendAlwaysReadTags;
+        string vSpecialParameter;
+        string vSupplier;
+        List<bool> vAntenaList;
+
         CNX config = new CNX();
         public FormConfigurarCNX()
         {
@@ -25,34 +43,34 @@ namespace AntennaSetupAPP.View
             LoadValuesCNX();
         }
 
-        private void getCNX(string ConnectionMode)
+        private void getCNX()
         {
             textBoxConfigCNX.ReadOnly = true;
 
             List<AntenaProps> antenaProps = new List<AntenaProps>();
-            antenaProps.Add(new AntenaProps() { Antena = 1, Used = false});
-            antenaProps.Add(new AntenaProps() { Antena = 2, Used = false});
-            antenaProps.Add(new AntenaProps() { Antena = 3, Used = false});
-            antenaProps.Add(new AntenaProps() { Antena = 4, Used = true});
+            antenaProps.Add(new AntenaProps() { Antena = 1, Used = false });
+            antenaProps.Add(new AntenaProps() { Antena = 2, Used = false });
+            antenaProps.Add(new AntenaProps() { Antena = 3, Used = false });
+            antenaProps.Add(new AntenaProps() { Antena = 4, Used = true });
 
             config = new CNX
             {
-                ConnectionMode = ConnectionMode,
-                Name = "EDGE50AID",
-                IPAddress = "172.16.2.53",
-                IPPort = "5084",
-                IPPortA = "5085",
-                ComPort = "COM3",
-                InitialBaudRate = "115200",
-                FinalBaudRate = "115200",
+                ConnectionMode = "TMR",
+                Name = vName,
+                IPAddress = vIPAddress,
+                IPPort = vIPPort,
+                IPPortA = vIPPortA,
+                ComPort = vComPort,
+                InitialBaudRate = vInitialBaudRate,
+                FinalBaudRate = vFinalBaudRate,
                 KanbanAntenaList = new[] { 1, 2, 0, 0 },
                 PositionAntenaList = new[] { 1, 2, 2, 4 },
                 DirectionAntenaList = new[] { 1, 1, 2, 2 },
-                AliveTagList = "300ED89F3350008CCCD16C71",
-                ImproperTagList = "E0AABBBBFF00002222AAAAAA,E0AABBBBFF00002222AAAAAB,E0AABBBBFF00002222AAAAAC",
+                AliveTagList = vAliveTagList,
+                ImproperTagList = vImproperTagList,
                 SendAlwaysReadTags = false,
-                SpecialParameter = "SINGLE",
-                Supplier = "UHF_ThingMagic",
+                SpecialParameter = vSpecialParameter,
+                Supplier = vSupplier,
                 AntenaList = antenaProps
 
             };
@@ -124,7 +142,14 @@ namespace AntennaSetupAPP.View
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
-            getCNX(textBoxName.Text.ToString());
+            vName = textBoxName.Text;
+            getCNX();
+        }
+
+        private void textBoxIPAddress_TextChanged(object sender, EventArgs e)
+        {
+            vIPAddress = textBoxIPAddress.Text;
+            getCNX();
         }
     }
 }
