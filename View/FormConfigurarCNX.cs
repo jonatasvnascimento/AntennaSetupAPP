@@ -24,7 +24,8 @@ namespace AntennaSetupAPP.View
 
         private void LoadValuesCNX()
         {
-            radioButtonTMR.Checked = true;
+            checkBoxTMR.Checked = true;
+
             textBoxName.Text = "EDGE50AID";
             textBoxIPAddress.Text = "";
 
@@ -48,6 +49,28 @@ namespace AntennaSetupAPP.View
             textBoxKanbanAntenaList2.Text = "2";
             textBoxKanbanAntenaList3.Text = "0";
             textBoxKanbanAntenaList4.Text = "0";
+
+            textBoxPositionAntenaList1.Text = "1";
+            textBoxPositionAntenaList2.Text = "2";
+            textBoxPositionAntenaList3.Text = "2";
+            textBoxPositionAntenaList4.Text = "4";
+
+            textBoxDirectionAntenaList1.Text = "1";
+            textBoxDirectionAntenaList2.Text = "1";
+            textBoxDirectionAntenaList3.Text = "2";
+            textBoxDirectionAntenaList4.Text = "2";
+
+            textBoxAliveTagList.Text = "300ED89F3350008CCCD16C71";
+
+            textBoxImproperTagList.Text = "E0AABBBBFF00002222AAAAAA,E0AABBBBFF00002222AAAAAB,E0AABBBBFF00002222AAAAAC";
+
+            radioButtonSendAlwaysReadTagsFalse.Checked = true;
+
+            textBoxSpecialParameter.Text = "SINGLE";
+
+            comboBoxSupplier.Items.Add("UHF_ThingMagic");
+            comboBoxSupplier.Text = comboBoxSupplier.Items[0].ToString();
+
 
 
 

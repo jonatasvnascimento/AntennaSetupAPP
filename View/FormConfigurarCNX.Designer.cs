@@ -30,11 +30,8 @@ namespace AntennaSetupAPP.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfigurarCNX));
-            this.radioButtonTMR = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButtonSERIAL = new System.Windows.Forms.RadioButton();
-            this.radioButtonTCP = new System.Windows.Forms.RadioButton();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,34 +70,27 @@ namespace AntennaSetupAPP.View
             this.label18 = new System.Windows.Forms.Label();
             this.textBoxAliveTagList = new System.Windows.Forms.TextBox();
             this.textBoxImproperTagList = new System.Windows.Forms.TextBox();
-            this.radioButtonSendAlwaysReadTagsTrue = new System.Windows.Forms.RadioButton();
-            this.radioButtonSendAlwaysReadTagsFalse = new System.Windows.Forms.RadioButton();
             this.textBoxSpecialParameter = new System.Windows.Forms.TextBox();
-            this.textBoxSupplier = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.radioButtonAntena1False = new System.Windows.Forms.RadioButton();
-            this.radioButtonAntena1True = new System.Windows.Forms.RadioButton();
-            this.radioButtonAntena2False = new System.Windows.Forms.RadioButton();
-            this.radioButtonAntena2True = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
-            this.radioButtonAntena3False = new System.Windows.Forms.RadioButton();
-            this.radioButtonAntena3True = new System.Windows.Forms.RadioButton();
             this.label21 = new System.Windows.Forms.Label();
-            this.radioButtonAntena4False = new System.Windows.Forms.RadioButton();
-            this.radioButtonAntena4True = new System.Windows.Forms.RadioButton();
             this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
+            this.checkBoxTMR = new System.Windows.Forms.CheckBox();
+            this.checkBoxSERIAL = new System.Windows.Forms.CheckBox();
+            this.checkBoxTCP = new System.Windows.Forms.CheckBox();
+            this.checkBoxSendAlwaysReadTagsTrue = new System.Windows.Forms.CheckBox();
+            this.checkBoxSendAlwaysReadTagsFalse = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena1True = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena1False = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena2False = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena2True = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena3False = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena3True = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena4False = new System.Windows.Forms.CheckBox();
+            this.checkBoxAntena4True = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            // 
-            // radioButtonTMR
-            // 
-            this.radioButtonTMR.AutoSize = true;
-            this.radioButtonTMR.Location = new System.Drawing.Point(19, 30);
-            this.radioButtonTMR.Name = "radioButtonTMR";
-            this.radioButtonTMR.Size = new System.Drawing.Size(49, 19);
-            this.radioButtonTMR.TabIndex = 1;
-            this.radioButtonTMR.TabStop = true;
-            this.radioButtonTMR.Text = "TMR";
-            this.radioButtonTMR.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -121,28 +111,6 @@ namespace AntennaSetupAPP.View
             this.label1.Size = new System.Drawing.Size(100, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "ConnectionMode";
-            // 
-            // radioButtonSERIAL
-            // 
-            this.radioButtonSERIAL.AutoSize = true;
-            this.radioButtonSERIAL.Location = new System.Drawing.Point(84, 30);
-            this.radioButtonSERIAL.Name = "radioButtonSERIAL";
-            this.radioButtonSERIAL.Size = new System.Drawing.Size(61, 19);
-            this.radioButtonSERIAL.TabIndex = 4;
-            this.radioButtonSERIAL.TabStop = true;
-            this.radioButtonSERIAL.Text = "SERIAL";
-            this.radioButtonSERIAL.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTCP
-            // 
-            this.radioButtonTCP.AutoSize = true;
-            this.radioButtonTCP.Location = new System.Drawing.Point(153, 30);
-            this.radioButtonTCP.Name = "radioButtonTCP";
-            this.radioButtonTCP.Size = new System.Drawing.Size(45, 19);
-            this.radioButtonTCP.TabIndex = 5;
-            this.radioButtonTCP.TabStop = true;
-            this.radioButtonTCP.Text = "TCP";
-            this.radioButtonTCP.UseVisualStyleBackColor = true;
             // 
             // textBoxName
             // 
@@ -348,6 +316,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList1.Name = "textBoxKanbanAntenaList1";
             this.textBoxKanbanAntenaList1.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList1.TabIndex = 31;
+            this.textBoxKanbanAntenaList1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxKanbanAntenaList2
             // 
@@ -355,6 +324,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList2.Name = "textBoxKanbanAntenaList2";
             this.textBoxKanbanAntenaList2.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList2.TabIndex = 32;
+            this.textBoxKanbanAntenaList2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxKanbanAntenaList3
             // 
@@ -362,6 +332,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList3.Name = "textBoxKanbanAntenaList3";
             this.textBoxKanbanAntenaList3.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList3.TabIndex = 33;
+            this.textBoxKanbanAntenaList3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxKanbanAntenaList4
             // 
@@ -369,6 +340,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList4.Name = "textBoxKanbanAntenaList4";
             this.textBoxKanbanAntenaList4.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList4.TabIndex = 34;
+            this.textBoxKanbanAntenaList4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPositionAntenaList4
             // 
@@ -376,6 +348,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList4.Name = "textBoxPositionAntenaList4";
             this.textBoxPositionAntenaList4.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList4.TabIndex = 38;
+            this.textBoxPositionAntenaList4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPositionAntenaList3
             // 
@@ -383,6 +356,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList3.Name = "textBoxPositionAntenaList3";
             this.textBoxPositionAntenaList3.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList3.TabIndex = 37;
+            this.textBoxPositionAntenaList3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPositionAntenaList2
             // 
@@ -390,6 +364,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList2.Name = "textBoxPositionAntenaList2";
             this.textBoxPositionAntenaList2.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList2.TabIndex = 36;
+            this.textBoxPositionAntenaList2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPositionAntenaList1
             // 
@@ -397,6 +372,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList1.Name = "textBoxPositionAntenaList1";
             this.textBoxPositionAntenaList1.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList1.TabIndex = 35;
+            this.textBoxPositionAntenaList1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxDirectionAntenaList4
             // 
@@ -404,6 +380,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList4.Name = "textBoxDirectionAntenaList4";
             this.textBoxDirectionAntenaList4.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList4.TabIndex = 42;
+            this.textBoxDirectionAntenaList4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxDirectionAntenaList3
             // 
@@ -411,6 +388,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList3.Name = "textBoxDirectionAntenaList3";
             this.textBoxDirectionAntenaList3.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList3.TabIndex = 41;
+            this.textBoxDirectionAntenaList3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxDirectionAntenaList2
             // 
@@ -418,6 +396,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList2.Name = "textBoxDirectionAntenaList2";
             this.textBoxDirectionAntenaList2.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList2.TabIndex = 40;
+            this.textBoxDirectionAntenaList2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxDirectionAntenaList1
             // 
@@ -425,6 +404,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList1.Name = "textBoxDirectionAntenaList1";
             this.textBoxDirectionAntenaList1.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList1.TabIndex = 39;
+            this.textBoxDirectionAntenaList1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -448,41 +428,12 @@ namespace AntennaSetupAPP.View
             this.textBoxImproperTagList.Size = new System.Drawing.Size(179, 23);
             this.textBoxImproperTagList.TabIndex = 45;
             // 
-            // radioButtonSendAlwaysReadTagsTrue
-            // 
-            this.radioButtonSendAlwaysReadTagsTrue.AutoSize = true;
-            this.radioButtonSendAlwaysReadTagsTrue.Location = new System.Drawing.Point(236, 158);
-            this.radioButtonSendAlwaysReadTagsTrue.Name = "radioButtonSendAlwaysReadTagsTrue";
-            this.radioButtonSendAlwaysReadTagsTrue.Size = new System.Drawing.Size(47, 19);
-            this.radioButtonSendAlwaysReadTagsTrue.TabIndex = 46;
-            this.radioButtonSendAlwaysReadTagsTrue.TabStop = true;
-            this.radioButtonSendAlwaysReadTagsTrue.Text = "True";
-            this.radioButtonSendAlwaysReadTagsTrue.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSendAlwaysReadTagsFalse
-            // 
-            this.radioButtonSendAlwaysReadTagsFalse.AutoSize = true;
-            this.radioButtonSendAlwaysReadTagsFalse.Location = new System.Drawing.Point(291, 158);
-            this.radioButtonSendAlwaysReadTagsFalse.Name = "radioButtonSendAlwaysReadTagsFalse";
-            this.radioButtonSendAlwaysReadTagsFalse.Size = new System.Drawing.Size(51, 19);
-            this.radioButtonSendAlwaysReadTagsFalse.TabIndex = 47;
-            this.radioButtonSendAlwaysReadTagsFalse.TabStop = true;
-            this.radioButtonSendAlwaysReadTagsFalse.Text = "False";
-            this.radioButtonSendAlwaysReadTagsFalse.UseVisualStyleBackColor = true;
-            // 
             // textBoxSpecialParameter
             // 
             this.textBoxSpecialParameter.Location = new System.Drawing.Point(236, 202);
             this.textBoxSpecialParameter.Name = "textBoxSpecialParameter";
             this.textBoxSpecialParameter.Size = new System.Drawing.Size(179, 23);
             this.textBoxSpecialParameter.TabIndex = 48;
-            // 
-            // textBoxSupplier
-            // 
-            this.textBoxSupplier.Location = new System.Drawing.Point(236, 246);
-            this.textBoxSupplier.Name = "textBoxSupplier";
-            this.textBoxSupplier.Size = new System.Drawing.Size(179, 23);
-            this.textBoxSupplier.TabIndex = 49;
             // 
             // label19
             // 
@@ -493,50 +444,6 @@ namespace AntennaSetupAPP.View
             this.label19.TabIndex = 50;
             this.label19.Text = "Antena 1";
             // 
-            // radioButtonAntena1False
-            // 
-            this.radioButtonAntena1False.AutoSize = true;
-            this.radioButtonAntena1False.Location = new System.Drawing.Point(321, 316);
-            this.radioButtonAntena1False.Name = "radioButtonAntena1False";
-            this.radioButtonAntena1False.Size = new System.Drawing.Size(51, 19);
-            this.radioButtonAntena1False.TabIndex = 52;
-            this.radioButtonAntena1False.TabStop = true;
-            this.radioButtonAntena1False.Text = "False";
-            this.radioButtonAntena1False.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAntena1True
-            // 
-            this.radioButtonAntena1True.AutoSize = true;
-            this.radioButtonAntena1True.Location = new System.Drawing.Point(266, 316);
-            this.radioButtonAntena1True.Name = "radioButtonAntena1True";
-            this.radioButtonAntena1True.Size = new System.Drawing.Size(47, 19);
-            this.radioButtonAntena1True.TabIndex = 51;
-            this.radioButtonAntena1True.TabStop = true;
-            this.radioButtonAntena1True.Text = "True";
-            this.radioButtonAntena1True.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAntena2False
-            // 
-            this.radioButtonAntena2False.AutoSize = true;
-            this.radioButtonAntena2False.Location = new System.Drawing.Point(321, 357);
-            this.radioButtonAntena2False.Name = "radioButtonAntena2False";
-            this.radioButtonAntena2False.Size = new System.Drawing.Size(51, 19);
-            this.radioButtonAntena2False.TabIndex = 55;
-            this.radioButtonAntena2False.TabStop = true;
-            this.radioButtonAntena2False.Text = "False";
-            this.radioButtonAntena2False.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAntena2True
-            // 
-            this.radioButtonAntena2True.AutoSize = true;
-            this.radioButtonAntena2True.Location = new System.Drawing.Point(266, 357);
-            this.radioButtonAntena2True.Name = "radioButtonAntena2True";
-            this.radioButtonAntena2True.Size = new System.Drawing.Size(47, 19);
-            this.radioButtonAntena2True.TabIndex = 54;
-            this.radioButtonAntena2True.TabStop = true;
-            this.radioButtonAntena2True.Text = "True";
-            this.radioButtonAntena2True.UseVisualStyleBackColor = true;
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -545,28 +452,6 @@ namespace AntennaSetupAPP.View
             this.label20.Size = new System.Drawing.Size(54, 15);
             this.label20.TabIndex = 53;
             this.label20.Text = "Antena 2";
-            // 
-            // radioButtonAntena3False
-            // 
-            this.radioButtonAntena3False.AutoSize = true;
-            this.radioButtonAntena3False.Location = new System.Drawing.Point(321, 401);
-            this.radioButtonAntena3False.Name = "radioButtonAntena3False";
-            this.radioButtonAntena3False.Size = new System.Drawing.Size(51, 19);
-            this.radioButtonAntena3False.TabIndex = 58;
-            this.radioButtonAntena3False.TabStop = true;
-            this.radioButtonAntena3False.Text = "False";
-            this.radioButtonAntena3False.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAntena3True
-            // 
-            this.radioButtonAntena3True.AutoSize = true;
-            this.radioButtonAntena3True.Location = new System.Drawing.Point(266, 401);
-            this.radioButtonAntena3True.Name = "radioButtonAntena3True";
-            this.radioButtonAntena3True.Size = new System.Drawing.Size(47, 19);
-            this.radioButtonAntena3True.TabIndex = 57;
-            this.radioButtonAntena3True.TabStop = true;
-            this.radioButtonAntena3True.Text = "True";
-            this.radioButtonAntena3True.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -577,28 +462,6 @@ namespace AntennaSetupAPP.View
             this.label21.TabIndex = 56;
             this.label21.Text = "Antena 3";
             // 
-            // radioButtonAntena4False
-            // 
-            this.radioButtonAntena4False.AutoSize = true;
-            this.radioButtonAntena4False.Location = new System.Drawing.Point(321, 447);
-            this.radioButtonAntena4False.Name = "radioButtonAntena4False";
-            this.radioButtonAntena4False.Size = new System.Drawing.Size(51, 19);
-            this.radioButtonAntena4False.TabIndex = 61;
-            this.radioButtonAntena4False.TabStop = true;
-            this.radioButtonAntena4False.Text = "False";
-            this.radioButtonAntena4False.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAntena4True
-            // 
-            this.radioButtonAntena4True.AutoSize = true;
-            this.radioButtonAntena4True.Location = new System.Drawing.Point(266, 447);
-            this.radioButtonAntena4True.Name = "radioButtonAntena4True";
-            this.radioButtonAntena4True.Size = new System.Drawing.Size(47, 19);
-            this.radioButtonAntena4True.TabIndex = 60;
-            this.radioButtonAntena4True.TabStop = true;
-            this.radioButtonAntena4True.Text = "True";
-            this.radioButtonAntena4True.UseVisualStyleBackColor = true;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -608,30 +471,180 @@ namespace AntennaSetupAPP.View
             this.label22.TabIndex = 59;
             this.label22.Text = "Antena 4";
             // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.label23.Location = new System.Drawing.Point(451, 13);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(1, 568);
+            this.label23.TabIndex = 43;
+            // 
+            // comboBoxSupplier
+            // 
+            this.comboBoxSupplier.FormattingEnabled = true;
+            this.comboBoxSupplier.Location = new System.Drawing.Point(236, 246);
+            this.comboBoxSupplier.Name = "comboBoxSupplier";
+            this.comboBoxSupplier.Size = new System.Drawing.Size(179, 23);
+            this.comboBoxSupplier.TabIndex = 62;
+            // 
+            // checkBoxTMR
+            // 
+            this.checkBoxTMR.AutoSize = true;
+            this.checkBoxTMR.Location = new System.Drawing.Point(19, 30);
+            this.checkBoxTMR.Name = "checkBoxTMR";
+            this.checkBoxTMR.Size = new System.Drawing.Size(50, 19);
+            this.checkBoxTMR.TabIndex = 63;
+            this.checkBoxTMR.Text = "TMR";
+            this.checkBoxTMR.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSERIAL
+            // 
+            this.checkBoxSERIAL.AutoSize = true;
+            this.checkBoxSERIAL.Location = new System.Drawing.Point(75, 30);
+            this.checkBoxSERIAL.Name = "checkBoxSERIAL";
+            this.checkBoxSERIAL.Size = new System.Drawing.Size(62, 19);
+            this.checkBoxSERIAL.TabIndex = 64;
+            this.checkBoxSERIAL.Text = "SERIAL";
+            this.checkBoxSERIAL.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTCP
+            // 
+            this.checkBoxTCP.AutoSize = true;
+            this.checkBoxTCP.Location = new System.Drawing.Point(143, 30);
+            this.checkBoxTCP.Name = "checkBoxTCP";
+            this.checkBoxTCP.Size = new System.Drawing.Size(46, 19);
+            this.checkBoxTCP.TabIndex = 65;
+            this.checkBoxTCP.Text = "TCP";
+            this.checkBoxTCP.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSendAlwaysReadTagsTrue
+            // 
+            this.checkBoxSendAlwaysReadTagsTrue.AutoSize = true;
+            this.checkBoxSendAlwaysReadTagsTrue.Location = new System.Drawing.Point(250, 158);
+            this.checkBoxSendAlwaysReadTagsTrue.Name = "checkBoxSendAlwaysReadTagsTrue";
+            this.checkBoxSendAlwaysReadTagsTrue.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxSendAlwaysReadTagsTrue.TabIndex = 66;
+            this.checkBoxSendAlwaysReadTagsTrue.Text = "TRUE";
+            this.checkBoxSendAlwaysReadTagsTrue.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxSendAlwaysReadTagsFalse
+            // 
+            this.checkBoxSendAlwaysReadTagsFalse.AutoSize = true;
+            this.checkBoxSendAlwaysReadTagsFalse.Location = new System.Drawing.Point(336, 158);
+            this.checkBoxSendAlwaysReadTagsFalse.Name = "checkBoxSendAlwaysReadTagsFalse";
+            this.checkBoxSendAlwaysReadTagsFalse.Size = new System.Drawing.Size(57, 19);
+            this.checkBoxSendAlwaysReadTagsFalse.TabIndex = 67;
+            this.checkBoxSendAlwaysReadTagsFalse.Text = "FALSE";
+            this.checkBoxSendAlwaysReadTagsFalse.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena1True
+            // 
+            this.checkBoxAntena1True.AutoSize = true;
+            this.checkBoxAntena1True.Location = new System.Drawing.Point(266, 311);
+            this.checkBoxAntena1True.Name = "checkBoxAntena1True";
+            this.checkBoxAntena1True.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena1True.TabIndex = 68;
+            this.checkBoxAntena1True.Text = "TRUE";
+            this.checkBoxAntena1True.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena1False
+            // 
+            this.checkBoxAntena1False.AutoSize = true;
+            this.checkBoxAntena1False.Location = new System.Drawing.Point(336, 311);
+            this.checkBoxAntena1False.Name = "checkBoxAntena1False";
+            this.checkBoxAntena1False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena1False.TabIndex = 69;
+            this.checkBoxAntena1False.Text = "TRUE";
+            this.checkBoxAntena1False.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena2False
+            // 
+            this.checkBoxAntena2False.AutoSize = true;
+            this.checkBoxAntena2False.Location = new System.Drawing.Point(336, 357);
+            this.checkBoxAntena2False.Name = "checkBoxAntena2False";
+            this.checkBoxAntena2False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena2False.TabIndex = 71;
+            this.checkBoxAntena2False.Text = "TRUE";
+            this.checkBoxAntena2False.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena2True
+            // 
+            this.checkBoxAntena2True.AutoSize = true;
+            this.checkBoxAntena2True.Location = new System.Drawing.Point(266, 357);
+            this.checkBoxAntena2True.Name = "checkBoxAntena2True";
+            this.checkBoxAntena2True.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena2True.TabIndex = 70;
+            this.checkBoxAntena2True.Text = "TRUE";
+            this.checkBoxAntena2True.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena3False
+            // 
+            this.checkBoxAntena3False.AutoSize = true;
+            this.checkBoxAntena3False.Location = new System.Drawing.Point(336, 401);
+            this.checkBoxAntena3False.Name = "checkBoxAntena3False";
+            this.checkBoxAntena3False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena3False.TabIndex = 73;
+            this.checkBoxAntena3False.Text = "TRUE";
+            this.checkBoxAntena3False.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena3True
+            // 
+            this.checkBoxAntena3True.AutoSize = true;
+            this.checkBoxAntena3True.Location = new System.Drawing.Point(266, 401);
+            this.checkBoxAntena3True.Name = "checkBoxAntena3True";
+            this.checkBoxAntena3True.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena3True.TabIndex = 72;
+            this.checkBoxAntena3True.Text = "TRUE";
+            this.checkBoxAntena3True.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena4False
+            // 
+            this.checkBoxAntena4False.AutoSize = true;
+            this.checkBoxAntena4False.Location = new System.Drawing.Point(336, 445);
+            this.checkBoxAntena4False.Name = "checkBoxAntena4False";
+            this.checkBoxAntena4False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena4False.TabIndex = 75;
+            this.checkBoxAntena4False.Text = "TRUE";
+            this.checkBoxAntena4False.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAntena4True
+            // 
+            this.checkBoxAntena4True.AutoSize = true;
+            this.checkBoxAntena4True.Location = new System.Drawing.Point(266, 445);
+            this.checkBoxAntena4True.Name = "checkBoxAntena4True";
+            this.checkBoxAntena4True.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena4True.TabIndex = 74;
+            this.checkBoxAntena4True.Text = "TRUE";
+            this.checkBoxAntena4True.UseVisualStyleBackColor = true;
+            // 
             // FormConfigurarCNX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(879, 593);
-            this.Controls.Add(this.radioButtonAntena4False);
-            this.Controls.Add(this.radioButtonAntena4True);
+            this.Controls.Add(this.checkBoxAntena4False);
+            this.Controls.Add(this.checkBoxAntena4True);
+            this.Controls.Add(this.checkBoxAntena3False);
+            this.Controls.Add(this.checkBoxAntena3True);
+            this.Controls.Add(this.checkBoxAntena2False);
+            this.Controls.Add(this.checkBoxAntena2True);
+            this.Controls.Add(this.checkBoxAntena1False);
+            this.Controls.Add(this.checkBoxAntena1True);
+            this.Controls.Add(this.checkBoxSendAlwaysReadTagsFalse);
+            this.Controls.Add(this.checkBoxSendAlwaysReadTagsTrue);
+            this.Controls.Add(this.checkBoxTCP);
+            this.Controls.Add(this.checkBoxSERIAL);
+            this.Controls.Add(this.checkBoxTMR);
+            this.Controls.Add(this.comboBoxSupplier);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.radioButtonAntena3False);
-            this.Controls.Add(this.radioButtonAntena3True);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.radioButtonAntena2False);
-            this.Controls.Add(this.radioButtonAntena2True);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.radioButtonAntena1False);
-            this.Controls.Add(this.radioButtonAntena1True);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBoxSupplier);
             this.Controls.Add(this.textBoxSpecialParameter);
-            this.Controls.Add(this.radioButtonSendAlwaysReadTagsFalse);
-            this.Controls.Add(this.radioButtonSendAlwaysReadTagsTrue);
             this.Controls.Add(this.textBoxImproperTagList);
             this.Controls.Add(this.textBoxAliveTagList);
+            this.Controls.Add(this.label23);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.textBoxDirectionAntenaList4);
             this.Controls.Add(this.textBoxDirectionAntenaList3);
@@ -668,11 +681,8 @@ namespace AntennaSetupAPP.View
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxName);
-            this.Controls.Add(this.radioButtonTCP);
-            this.Controls.Add(this.radioButtonSERIAL);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.radioButtonTMR);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConfigurarCNX";
@@ -684,11 +694,8 @@ namespace AntennaSetupAPP.View
         }
 
         #endregion
-        private System.Windows.Forms.RadioButton radioButtonTMR;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButtonSERIAL;
-        private System.Windows.Forms.RadioButton radioButtonTCP;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -727,21 +734,25 @@ namespace AntennaSetupAPP.View
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBoxAliveTagList;
         private System.Windows.Forms.TextBox textBoxImproperTagList;
-        private System.Windows.Forms.RadioButton radioButtonSendAlwaysReadTagsTrue;
-        private System.Windows.Forms.RadioButton radioButtonSendAlwaysReadTagsFalse;
         private System.Windows.Forms.TextBox textBoxSpecialParameter;
-        private System.Windows.Forms.TextBox textBoxSupplier;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.RadioButton radioButtonAntena1False;
-        private System.Windows.Forms.RadioButton radioButtonAntena1True;
-        private System.Windows.Forms.RadioButton radioButtonAntena2False;
-        private System.Windows.Forms.RadioButton radioButtonAntena2True;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.RadioButton radioButtonAntena3False;
-        private System.Windows.Forms.RadioButton radioButtonAntena3True;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.RadioButton radioButtonAntena4False;
-        private System.Windows.Forms.RadioButton radioButtonAntena4True;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboBoxSupplier;
+        private System.Windows.Forms.CheckBox checkBoxTMR;
+        private System.Windows.Forms.CheckBox checkBoxSERIAL;
+        private System.Windows.Forms.CheckBox checkBoxTCP;
+        private System.Windows.Forms.CheckBox checkBoxSendAlwaysReadTagsTrue;
+        private System.Windows.Forms.CheckBox checkBoxSendAlwaysReadTagsFalse;
+        private System.Windows.Forms.CheckBox checkBoxAntena1True;
+        private System.Windows.Forms.CheckBox checkBoxAntena1False;
+        private System.Windows.Forms.CheckBox checkBoxAntena2False;
+        private System.Windows.Forms.CheckBox checkBoxAntena2True;
+        private System.Windows.Forms.CheckBox checkBoxAntena3False;
+        private System.Windows.Forms.CheckBox checkBoxAntena3True;
+        private System.Windows.Forms.CheckBox checkBoxAntena4False;
+        private System.Windows.Forms.CheckBox checkBoxAntena4True;
     }
 }
