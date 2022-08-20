@@ -30,7 +30,7 @@ namespace AntennaSetupAPP.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfigurarCNX));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxConfigCNX = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -92,16 +92,16 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena4True = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxConfigCNX
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(525, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(342, 569);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBoxConfigCNX.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxConfigCNX.Location = new System.Drawing.Point(525, 12);
+            this.textBoxConfigCNX.Multiline = true;
+            this.textBoxConfigCNX.Name = "textBoxConfigCNX";
+            this.textBoxConfigCNX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxConfigCNX.Size = new System.Drawing.Size(342, 569);
+            this.textBoxConfigCNX.TabIndex = 2;
+            this.textBoxConfigCNX.Text = resources.GetString("textBoxConfigCNX.Text");
             // 
             // label1
             // 
@@ -552,9 +552,9 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena1False.AutoSize = true;
             this.checkBoxAntena1False.Location = new System.Drawing.Point(336, 311);
             this.checkBoxAntena1False.Name = "checkBoxAntena1False";
-            this.checkBoxAntena1False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena1False.Size = new System.Drawing.Size(57, 19);
             this.checkBoxAntena1False.TabIndex = 69;
-            this.checkBoxAntena1False.Text = "TRUE";
+            this.checkBoxAntena1False.Text = "FALSE";
             this.checkBoxAntena1False.UseVisualStyleBackColor = true;
             // 
             // checkBoxAntena2False
@@ -562,9 +562,9 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena2False.AutoSize = true;
             this.checkBoxAntena2False.Location = new System.Drawing.Point(336, 357);
             this.checkBoxAntena2False.Name = "checkBoxAntena2False";
-            this.checkBoxAntena2False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena2False.Size = new System.Drawing.Size(57, 19);
             this.checkBoxAntena2False.TabIndex = 71;
-            this.checkBoxAntena2False.Text = "TRUE";
+            this.checkBoxAntena2False.Text = "FALSE";
             this.checkBoxAntena2False.UseVisualStyleBackColor = true;
             // 
             // checkBoxAntena2True
@@ -582,9 +582,9 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena3False.AutoSize = true;
             this.checkBoxAntena3False.Location = new System.Drawing.Point(336, 401);
             this.checkBoxAntena3False.Name = "checkBoxAntena3False";
-            this.checkBoxAntena3False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena3False.Size = new System.Drawing.Size(57, 19);
             this.checkBoxAntena3False.TabIndex = 73;
-            this.checkBoxAntena3False.Text = "TRUE";
+            this.checkBoxAntena3False.Text = "FALSE";
             this.checkBoxAntena3False.UseVisualStyleBackColor = true;
             // 
             // checkBoxAntena3True
@@ -602,9 +602,9 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena4False.AutoSize = true;
             this.checkBoxAntena4False.Location = new System.Drawing.Point(336, 445);
             this.checkBoxAntena4False.Name = "checkBoxAntena4False";
-            this.checkBoxAntena4False.Size = new System.Drawing.Size(53, 19);
+            this.checkBoxAntena4False.Size = new System.Drawing.Size(57, 19);
             this.checkBoxAntena4False.TabIndex = 75;
-            this.checkBoxAntena4False.Text = "TRUE";
+            this.checkBoxAntena4False.Text = "FALSE";
             this.checkBoxAntena4False.UseVisualStyleBackColor = true;
             // 
             // checkBoxAntena4True
@@ -682,7 +682,7 @@ namespace AntennaSetupAPP.View
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxConfigCNX);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConfigurarCNX";
@@ -694,7 +694,7 @@ namespace AntennaSetupAPP.View
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxConfigCNX;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label2;

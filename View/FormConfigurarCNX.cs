@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using static AntennaSetupAPP.Model.modelCNX;
 
 namespace AntennaSetupAPP.View
 {
@@ -20,14 +22,41 @@ namespace AntennaSetupAPP.View
         private void FormConfigurarCNX_Load(object sender, EventArgs e)
         {
             LoadValuesCNX();
+            getCNX();
         }
+
+        private void getCNX()
+        {
+            CNX product = new CNX
+            {
+                ConnectionMode = "TMR",
+                Name = "EDGE50AID",
+                IPAddress = "172.16.2.53",
+                IPPort = "5084",
+                IPPortA = "5085",
+                ComPort = "COM3",
+                InitialBaudRate = "115200",
+                FinalBaudRate = "115200",
+                KanbanAntenaList = new[] {1, 2, 0, 0},
+                PositionAntenaList = new[] {1, 2, 2, 4},
+                DirectionAntenaList = new[] {1, 1, 2, 2},
+            };
+
+            string json = JsonConvert.SerializeObject(product, Formatting.Indented);
+            textBoxConfigCNX.Text = json;
+            //CNX deserializedProduct = JsonConvert.DeserializeObject<CNX>(json);
+        }
+
+
 
         private void LoadValuesCNX()
         {
             checkBoxTMR.Checked = true;
 
+
             textBoxName.Text = "EDGE50AID";
-            textBoxIPAddress.Text = "";
+            textBoxIPAddress.Text = "172.16.2.53";
+
 
             comboBoxIPPort.Items.Add("5084");
             comboBoxIPPort.Items.Add("8081");
@@ -64,16 +93,17 @@ namespace AntennaSetupAPP.View
 
             textBoxImproperTagList.Text = "E0AABBBBFF00002222AAAAAA,E0AABBBBFF00002222AAAAAB,E0AABBBBFF00002222AAAAAC";
 
-            radioButtonSendAlwaysReadTagsFalse.Checked = true;
+            checkBoxSendAlwaysReadTagsFalse.Checked = true;
 
             textBoxSpecialParameter.Text = "SINGLE";
 
             comboBoxSupplier.Items.Add("UHF_ThingMagic");
             comboBoxSupplier.Text = comboBoxSupplier.Items[0].ToString();
 
-
-
-
+            checkBoxAntena1False.Checked = true;
+            checkBoxAntena2False.Checked = true;
+            checkBoxAntena3False.Checked = true;
+            checkBoxAntena4True.Checked = true;
 
         }
     }
