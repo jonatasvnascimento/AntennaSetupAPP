@@ -274,43 +274,53 @@ namespace AntennaSetupAPP.View
             // 
             // comboBoxIPPort
             // 
+            this.comboBoxIPPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIPPort.FormattingEnabled = true;
             this.comboBoxIPPort.Location = new System.Drawing.Point(19, 158);
             this.comboBoxIPPort.Name = "comboBoxIPPort";
             this.comboBoxIPPort.Size = new System.Drawing.Size(179, 23);
             this.comboBoxIPPort.TabIndex = 26;
+            this.comboBoxIPPort.SelectedIndexChanged += new System.EventHandler(this.comboBoxIPPort_SelectedIndexChanged);
             // 
             // comboBoxIPPortA
             // 
+            this.comboBoxIPPortA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxIPPortA.FormattingEnabled = true;
             this.comboBoxIPPortA.Location = new System.Drawing.Point(19, 202);
             this.comboBoxIPPortA.Name = "comboBoxIPPortA";
             this.comboBoxIPPortA.Size = new System.Drawing.Size(179, 23);
             this.comboBoxIPPortA.TabIndex = 27;
+            this.comboBoxIPPortA.SelectedIndexChanged += new System.EventHandler(this.comboBoxIPPortA_SelectedIndexChanged);
             // 
             // comboBoxComPort
             // 
+            this.comboBoxComPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComPort.FormattingEnabled = true;
             this.comboBoxComPort.Location = new System.Drawing.Point(19, 246);
             this.comboBoxComPort.Name = "comboBoxComPort";
             this.comboBoxComPort.Size = new System.Drawing.Size(179, 23);
             this.comboBoxComPort.TabIndex = 28;
+            this.comboBoxComPort.SelectedIndexChanged += new System.EventHandler(this.comboBoxComPort_SelectedIndexChanged);
             // 
             // comboBoxInitialBaudRate
             // 
+            this.comboBoxInitialBaudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxInitialBaudRate.FormattingEnabled = true;
             this.comboBoxInitialBaudRate.Location = new System.Drawing.Point(19, 290);
             this.comboBoxInitialBaudRate.Name = "comboBoxInitialBaudRate";
             this.comboBoxInitialBaudRate.Size = new System.Drawing.Size(179, 23);
             this.comboBoxInitialBaudRate.TabIndex = 29;
+            this.comboBoxInitialBaudRate.SelectedIndexChanged += new System.EventHandler(this.comboBoxInitialBaudRate_SelectedIndexChanged);
             // 
             // comboBoxFinalBaudRate
             // 
+            this.comboBoxFinalBaudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFinalBaudRate.FormattingEnabled = true;
             this.comboBoxFinalBaudRate.Location = new System.Drawing.Point(19, 334);
             this.comboBoxFinalBaudRate.Name = "comboBoxFinalBaudRate";
             this.comboBoxFinalBaudRate.Size = new System.Drawing.Size(179, 23);
             this.comboBoxFinalBaudRate.TabIndex = 30;
+            this.comboBoxFinalBaudRate.SelectedIndexChanged += new System.EventHandler(this.comboBoxFinalBaudRate_SelectedIndexChanged);
             // 
             // textBoxKanbanAntenaList1
             // 
@@ -483,6 +493,7 @@ namespace AntennaSetupAPP.View
             // 
             // comboBoxSupplier
             // 
+            this.comboBoxSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSupplier.FormattingEnabled = true;
             this.comboBoxSupplier.Location = new System.Drawing.Point(236, 246);
             this.comboBoxSupplier.Name = "comboBoxSupplier";

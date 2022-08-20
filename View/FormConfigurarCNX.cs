@@ -151,5 +151,35 @@ namespace AntennaSetupAPP.View
             vIPAddress = textBoxIPAddress.Text;
             getCNX();
         }
+
+        private void comboBoxIPPort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vIPPort = comboBoxIPPort.Text;
+            getCNX();
+        }
+
+        private void comboBoxIPPortA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vIPPortA = comboBoxIPPortA.Text;
+            getCNX();
+        }
+
+        private void comboBoxComPort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vComPort = comboBoxComPort.Text;
+            getCNX();
+        }
+
+        private void comboBoxInitialBaudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vInitialBaudRate = comboBoxInitialBaudRate.Text;
+            getCNX();
+        }
+
+        private void comboBoxFinalBaudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vFinalBaudRate = comboBoxFinalBaudRate.Text;
+            getCNX();
+        }
     }
 }
