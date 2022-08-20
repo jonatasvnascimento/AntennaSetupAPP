@@ -14,6 +14,7 @@ namespace AntennaSetupAPP.View
 {
     public partial class FormConfigurarCNX : Form
     {
+        CNX config = new CNX();
         public FormConfigurarCNX()
         {
             InitializeComponent();
@@ -22,20 +23,21 @@ namespace AntennaSetupAPP.View
         private void FormConfigurarCNX_Load(object sender, EventArgs e)
         {
             LoadValuesCNX();
-            getCNX();
         }
 
-        private void getCNX()
+        private void getCNX(string ConnectionMode)
         {
+            textBoxConfigCNX.ReadOnly = true;
+
             List<AntenaProps> antenaProps = new List<AntenaProps>();
             antenaProps.Add(new AntenaProps() { Antena = 1, Used = false});
             antenaProps.Add(new AntenaProps() { Antena = 2, Used = false});
             antenaProps.Add(new AntenaProps() { Antena = 3, Used = false});
             antenaProps.Add(new AntenaProps() { Antena = 4, Used = true});
-            
-            CNX product = new CNX
+
+            config = new CNX
             {
-                ConnectionMode = "TMR",
+                ConnectionMode = ConnectionMode,
                 Name = "EDGE50AID",
                 IPAddress = "172.16.2.53",
                 IPPort = "5084",
@@ -55,7 +57,7 @@ namespace AntennaSetupAPP.View
 
             };
 
-            string json = JsonConvert.SerializeObject(product, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(config, Formatting.Indented);
             textBoxConfigCNX.Text = json;
             //CNX deserializedProduct = JsonConvert.DeserializeObject<CNX>(json);
         }
@@ -118,6 +120,11 @@ namespace AntennaSetupAPP.View
             checkBoxAntena3False.Checked = true;
             checkBoxAntena4True.Checked = true;
 
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+            getCNX(textBoxName.Text.ToString());
         }
     }
 }

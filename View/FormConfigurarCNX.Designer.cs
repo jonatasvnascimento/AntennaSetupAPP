@@ -95,11 +95,11 @@ namespace AntennaSetupAPP.View
             // textBoxConfigCNX
             // 
             this.textBoxConfigCNX.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxConfigCNX.Location = new System.Drawing.Point(525, 12);
+            this.textBoxConfigCNX.Location = new System.Drawing.Point(470, 12);
             this.textBoxConfigCNX.Multiline = true;
             this.textBoxConfigCNX.Name = "textBoxConfigCNX";
             this.textBoxConfigCNX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxConfigCNX.Size = new System.Drawing.Size(342, 569);
+            this.textBoxConfigCNX.Size = new System.Drawing.Size(397, 569);
             this.textBoxConfigCNX.TabIndex = 2;
             this.textBoxConfigCNX.Text = resources.GetString("textBoxConfigCNX.Text");
             // 
@@ -118,6 +118,7 @@ namespace AntennaSetupAPP.View
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(179, 23);
             this.textBoxName.TabIndex = 6;
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
             // label2
             // 
