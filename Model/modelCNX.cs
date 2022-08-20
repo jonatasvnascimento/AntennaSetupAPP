@@ -26,7 +26,12 @@ namespace AntennaSetupAPP.Model
             public bool SendAlwaysReadTags { get; set; }
             public string SpecialParameter { get; set; }
             public string Supplier { get; set; }
-            public string[] AntenaList { get; set; }
+            public List<AntenaProps> AntenaList { get; set; }
+        }
+        internal class AntenaProps
+        {
+            public int Antena { get; set; }
+            public bool Used { get; set; }
         }
     }
 }

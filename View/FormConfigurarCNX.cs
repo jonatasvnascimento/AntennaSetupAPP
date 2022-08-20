@@ -27,6 +27,12 @@ namespace AntennaSetupAPP.View
 
         private void getCNX()
         {
+            List<AntenaProps> antenaProps = new List<AntenaProps>();
+            antenaProps.Add(new AntenaProps() { Antena = 1, Used = false});
+            antenaProps.Add(new AntenaProps() { Antena = 2, Used = false});
+            antenaProps.Add(new AntenaProps() { Antena = 3, Used = false});
+            antenaProps.Add(new AntenaProps() { Antena = 4, Used = true});
+            
             CNX product = new CNX
             {
                 ConnectionMode = "TMR",
@@ -37,9 +43,16 @@ namespace AntennaSetupAPP.View
                 ComPort = "COM3",
                 InitialBaudRate = "115200",
                 FinalBaudRate = "115200",
-                KanbanAntenaList = new[] {1, 2, 0, 0},
-                PositionAntenaList = new[] {1, 2, 2, 4},
-                DirectionAntenaList = new[] {1, 1, 2, 2},
+                KanbanAntenaList = new[] { 1, 2, 0, 0 },
+                PositionAntenaList = new[] { 1, 2, 2, 4 },
+                DirectionAntenaList = new[] { 1, 1, 2, 2 },
+                AliveTagList = "300ED89F3350008CCCD16C71",
+                ImproperTagList = "E0AABBBBFF00002222AAAAAA,E0AABBBBFF00002222AAAAAB,E0AABBBBFF00002222AAAAAC",
+                SendAlwaysReadTags = false,
+                SpecialParameter = "SINGLE",
+                Supplier = "UHF_ThingMagic",
+                AntenaList = antenaProps
+
             };
 
             string json = JsonConvert.SerializeObject(product, Formatting.Indented);
