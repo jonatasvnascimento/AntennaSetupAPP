@@ -105,7 +105,7 @@ namespace AntennaSetupAPP.View
             comboBoxInitialBaudRate.Items.Add("115200");
             comboBoxInitialBaudRate.Text = comboBoxInitialBaudRate.Items[0].ToString();
 
-            comboBoxFinalBaudRate.Items.Add("FinalBaudRate");
+            comboBoxFinalBaudRate.Items.Add("115200");
             comboBoxFinalBaudRate.Text = comboBoxFinalBaudRate.Items[0].ToString();
 
             textBoxKanbanAntenaList1.Text = "1";
@@ -132,6 +132,7 @@ namespace AntennaSetupAPP.View
             textBoxSpecialParameter.Text = "SINGLE";
 
             comboBoxSupplier.Items.Add("UHF_ThingMagic");
+            comboBoxSupplier.Items.Add("UHF_Impinj");
             comboBoxSupplier.Text = comboBoxSupplier.Items[0].ToString();
 
             checkBoxAntena1False.Checked = true;
@@ -166,6 +167,32 @@ namespace AntennaSetupAPP.View
                     getCNX();
                 }
 
+            }
+        }
+
+        private void validCheckBox(CheckBox checkBox)
+        {
+            if (checkBox.Name.Contains("TMR"))
+            {
+                checkBoxTMR.Checked = true;
+                checkBoxSERIAL.Checked = false;
+                checkBoxTCP.Checked = false;
+                return;
+            }
+            else if (checkBox.Name.Contains("SERIAL"))
+            {
+                checkBoxTMR.Checked = false;
+                checkBoxSERIAL.Checked = true;
+                checkBoxTCP.Checked = false;
+                return;
+
+            }
+            else if (checkBox.Name.Contains("TCP"))
+            {
+                checkBoxTMR.Checked = false;
+                checkBoxSERIAL.Checked = false;
+                checkBoxTCP.Checked = true;
+                return;
             }
         }
 
@@ -299,23 +326,14 @@ namespace AntennaSetupAPP.View
             validCheckBox(checkBoxTMR);
         }
 
-        private void validCheckBox(CheckBox checkBox)
-        {
-            if (checkBox.Name.Contains("TMR"))
-            {
-                checkBoxSERIAL.Checked = false;
-                checkBoxTCP.Checked = false;
-            }
-        }
-
         private void checkBoxSERIAL_CheckedChanged(object sender, EventArgs e)
         {
-           
+            validCheckBox(checkBoxSERIAL);
         }
 
         private void checkBoxTCP_CheckedChanged(object sender, EventArgs e)
         {
-           
+            validCheckBox(checkBoxTCP);
         }
     }
 }
