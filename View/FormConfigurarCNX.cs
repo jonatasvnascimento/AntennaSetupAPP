@@ -22,9 +22,9 @@ namespace AntennaSetupAPP.View
         string vComPort;
         string vInitialBaudRate;
         string vFinalBaudRate;
-        List<int> vKanbanAntenaList;
-        List<int> vPositionAntenaList;
-        List<int> vDirectionAntenaList;
+        List<int> vKanbanAntenaList = new List<int>() { 1, 2, 0, 0 };
+        List<int> vPositionAntenaList = new List<int>() { 1, 2, 2, 4 };
+        List<int> vDirectionAntenaList = new List<int>() { 1, 1, 2, 2 };
         string vAliveTagList;
         string vImproperTagList;
         bool vSendAlwaysReadTags;
@@ -53,6 +53,7 @@ namespace AntennaSetupAPP.View
             antenaProps.Add(new AntenaProps() { Antena = 3, Used = false });
             antenaProps.Add(new AntenaProps() { Antena = 4, Used = true });
 
+
             config = new CNX
             {
                 ConnectionMode = "TMR",
@@ -63,9 +64,9 @@ namespace AntennaSetupAPP.View
                 ComPort = vComPort,
                 InitialBaudRate = vInitialBaudRate,
                 FinalBaudRate = vFinalBaudRate,
-                KanbanAntenaList = new[] { 1, 2, 0, 0 },
-                PositionAntenaList = new[] { 1, 2, 2, 4 },
-                DirectionAntenaList = new[] { 1, 1, 2, 2 },
+                KanbanAntenaList = new[] { vKanbanAntenaList[0], vKanbanAntenaList[1], vKanbanAntenaList[2], vKanbanAntenaList[3] },
+                PositionAntenaList = new[] { vPositionAntenaList[0], vPositionAntenaList[1], vPositionAntenaList[2], vPositionAntenaList[3] },
+                DirectionAntenaList = new[] { vDirectionAntenaList[0], vDirectionAntenaList[1], vDirectionAntenaList[2], vDirectionAntenaList[3] },
                 AliveTagList = vAliveTagList,
                 ImproperTagList = vImproperTagList,
                 SendAlwaysReadTags = false,
@@ -140,6 +141,34 @@ namespace AntennaSetupAPP.View
 
         }
 
+        private void validNumAntena(TextBox textBox, int index)
+        {
+            int numAntena = 0;
+            int.TryParse(textBox.Text, out numAntena);
+            if (numAntena < 0)
+            {
+                return;
+            }
+            else
+            {
+                if (textBox.Name.Contains("KanbanAntena"))
+                {
+                    vKanbanAntenaList[index] = numAntena;
+                    getCNX();
+                }
+                else if (textBox.Name.Contains("PositionAntena"))
+                {
+                    vPositionAntenaList[index] = numAntena;
+                    getCNX();
+                }else if (textBox.Name.Contains("DirectionAntenaList"))
+                {
+                    vDirectionAntenaList[index] = numAntena;
+                    getCNX();
+                }
+
+            }
+        }
+
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
             vName = textBoxName.Text;
@@ -180,6 +209,113 @@ namespace AntennaSetupAPP.View
         {
             vFinalBaudRate = comboBoxFinalBaudRate.Text;
             getCNX();
+        }
+
+        private void textBoxKanbanAntenaList1_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxKanbanAntenaList1, 0);
+
+        }
+
+        private void textBoxKanbanAntenaList2_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxKanbanAntenaList2, 1);
+        }
+
+
+
+        private void textBoxKanbanAntenaList3_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxKanbanAntenaList3, 2);
+        }
+
+        private void textBoxKanbanAntenaList4_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxKanbanAntenaList4, 3);
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            LoadValuesCNX();
+        }
+
+        private void textBoxPositionAntenaList1_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxPositionAntenaList1, 0);
+        }
+
+        private void textBoxPositionAntenaList2_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxPositionAntenaList2, 1);
+        }
+
+        private void textBoxPositionAntenaList3_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxPositionAntenaList3, 2);
+        }
+
+        private void textBoxPositionAntenaList4_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxPositionAntenaList4, 3);
+        }
+
+        private void textBoxDirectionAntenaList1_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxDirectionAntenaList1, 0);
+        }
+
+        private void textBoxDirectionAntenaList2_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxDirectionAntenaList2, 1);
+
+        }
+
+        private void textBoxDirectionAntenaList3_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxDirectionAntenaList3, 2);
+
+        }
+
+        private void textBoxDirectionAntenaList4_TextChanged(object sender, EventArgs e)
+        {
+            validNumAntena(textBoxDirectionAntenaList4, 3);
+
+        }
+
+        private void textBoxAliveTagList_TextChanged(object sender, EventArgs e)
+        {
+            vAliveTagList = textBoxAliveTagList.Text;
+            getCNX();
+        }
+
+        private void textBoxImproperTagList_TextChanged(object sender, EventArgs e)
+        {
+            vImproperTagList = textBoxImproperTagList.Text;
+            getCNX();
+        }
+
+        private void checkBoxTMR_CheckedChanged(object sender, EventArgs e)
+        {
+            validCheckBox(checkBoxTMR);
+        }
+
+        private void validCheckBox(CheckBox checkBox)
+        {
+            if (checkBox.Name.Contains("TMR"))
+            {
+                checkBoxSERIAL.Checked = false;
+                checkBoxTCP.Checked = false;
+            }
+        }
+
+        private void checkBoxSERIAL_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void checkBoxTCP_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

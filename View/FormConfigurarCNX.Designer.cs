@@ -90,6 +90,8 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena3True = new System.Windows.Forms.CheckBox();
             this.checkBoxAntena4False = new System.Windows.Forms.CheckBox();
             this.checkBoxAntena4True = new System.Windows.Forms.CheckBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxConfigCNX
@@ -329,6 +331,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList1.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList1.TabIndex = 31;
             this.textBoxKanbanAntenaList1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxKanbanAntenaList1.TextChanged += new System.EventHandler(this.textBoxKanbanAntenaList1_TextChanged);
             // 
             // textBoxKanbanAntenaList2
             // 
@@ -337,6 +340,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList2.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList2.TabIndex = 32;
             this.textBoxKanbanAntenaList2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxKanbanAntenaList2.TextChanged += new System.EventHandler(this.textBoxKanbanAntenaList2_TextChanged);
             // 
             // textBoxKanbanAntenaList3
             // 
@@ -345,6 +349,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList3.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList3.TabIndex = 33;
             this.textBoxKanbanAntenaList3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxKanbanAntenaList3.TextChanged += new System.EventHandler(this.textBoxKanbanAntenaList3_TextChanged);
             // 
             // textBoxKanbanAntenaList4
             // 
@@ -353,6 +358,7 @@ namespace AntennaSetupAPP.View
             this.textBoxKanbanAntenaList4.Size = new System.Drawing.Size(40, 23);
             this.textBoxKanbanAntenaList4.TabIndex = 34;
             this.textBoxKanbanAntenaList4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxKanbanAntenaList4.TextChanged += new System.EventHandler(this.textBoxKanbanAntenaList4_TextChanged);
             // 
             // textBoxPositionAntenaList4
             // 
@@ -361,6 +367,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList4.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList4.TabIndex = 38;
             this.textBoxPositionAntenaList4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPositionAntenaList4.TextChanged += new System.EventHandler(this.textBoxPositionAntenaList4_TextChanged);
             // 
             // textBoxPositionAntenaList3
             // 
@@ -369,6 +376,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList3.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList3.TabIndex = 37;
             this.textBoxPositionAntenaList3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPositionAntenaList3.TextChanged += new System.EventHandler(this.textBoxPositionAntenaList3_TextChanged);
             // 
             // textBoxPositionAntenaList2
             // 
@@ -377,6 +385,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList2.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList2.TabIndex = 36;
             this.textBoxPositionAntenaList2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPositionAntenaList2.TextChanged += new System.EventHandler(this.textBoxPositionAntenaList2_TextChanged);
             // 
             // textBoxPositionAntenaList1
             // 
@@ -385,6 +394,7 @@ namespace AntennaSetupAPP.View
             this.textBoxPositionAntenaList1.Size = new System.Drawing.Size(40, 23);
             this.textBoxPositionAntenaList1.TabIndex = 35;
             this.textBoxPositionAntenaList1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPositionAntenaList1.TextChanged += new System.EventHandler(this.textBoxPositionAntenaList1_TextChanged);
             // 
             // textBoxDirectionAntenaList4
             // 
@@ -393,6 +403,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList4.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList4.TabIndex = 42;
             this.textBoxDirectionAntenaList4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxDirectionAntenaList4.TextChanged += new System.EventHandler(this.textBoxDirectionAntenaList4_TextChanged);
             // 
             // textBoxDirectionAntenaList3
             // 
@@ -401,6 +412,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList3.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList3.TabIndex = 41;
             this.textBoxDirectionAntenaList3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxDirectionAntenaList3.TextChanged += new System.EventHandler(this.textBoxDirectionAntenaList3_TextChanged);
             // 
             // textBoxDirectionAntenaList2
             // 
@@ -409,6 +421,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList2.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList2.TabIndex = 40;
             this.textBoxDirectionAntenaList2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxDirectionAntenaList2.TextChanged += new System.EventHandler(this.textBoxDirectionAntenaList2_TextChanged);
             // 
             // textBoxDirectionAntenaList1
             // 
@@ -417,6 +430,7 @@ namespace AntennaSetupAPP.View
             this.textBoxDirectionAntenaList1.Size = new System.Drawing.Size(40, 23);
             this.textBoxDirectionAntenaList1.TabIndex = 39;
             this.textBoxDirectionAntenaList1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxDirectionAntenaList1.TextChanged += new System.EventHandler(this.textBoxDirectionAntenaList1_TextChanged);
             // 
             // label18
             // 
@@ -432,6 +446,7 @@ namespace AntennaSetupAPP.View
             this.textBoxAliveTagList.Name = "textBoxAliveTagList";
             this.textBoxAliveTagList.Size = new System.Drawing.Size(179, 23);
             this.textBoxAliveTagList.TabIndex = 44;
+            this.textBoxAliveTagList.TextChanged += new System.EventHandler(this.textBoxAliveTagList_TextChanged);
             // 
             // textBoxImproperTagList
             // 
@@ -439,6 +454,7 @@ namespace AntennaSetupAPP.View
             this.textBoxImproperTagList.Name = "textBoxImproperTagList";
             this.textBoxImproperTagList.Size = new System.Drawing.Size(179, 23);
             this.textBoxImproperTagList.TabIndex = 45;
+            this.textBoxImproperTagList.TextChanged += new System.EventHandler(this.textBoxImproperTagList_TextChanged);
             // 
             // textBoxSpecialParameter
             // 
@@ -509,6 +525,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxTMR.TabIndex = 63;
             this.checkBoxTMR.Text = "TMR";
             this.checkBoxTMR.UseVisualStyleBackColor = true;
+            this.checkBoxTMR.CheckedChanged += new System.EventHandler(this.checkBoxTMR_CheckedChanged);
             // 
             // checkBoxSERIAL
             // 
@@ -519,6 +536,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxSERIAL.TabIndex = 64;
             this.checkBoxSERIAL.Text = "SERIAL";
             this.checkBoxSERIAL.UseVisualStyleBackColor = true;
+            this.checkBoxSERIAL.CheckedChanged += new System.EventHandler(this.checkBoxSERIAL_CheckedChanged);
             // 
             // checkBoxTCP
             // 
@@ -529,6 +547,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxTCP.TabIndex = 65;
             this.checkBoxTCP.Text = "TCP";
             this.checkBoxTCP.UseVisualStyleBackColor = true;
+            this.checkBoxTCP.CheckedChanged += new System.EventHandler(this.checkBoxTCP_CheckedChanged);
             // 
             // checkBoxSendAlwaysReadTagsTrue
             // 
@@ -630,12 +649,43 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena4True.Text = "TRUE";
             this.checkBoxAntena4True.UseVisualStyleBackColor = true;
             // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(13, 553);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(185, 27);
+            this.buttonSave.TabIndex = 76;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.buttonReset.FlatAppearance.BorderSize = 0;
+            this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReset.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonReset.ForeColor = System.Drawing.Color.White;
+            this.buttonReset.Location = new System.Drawing.Point(236, 553);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(185, 27);
+            this.buttonReset.TabIndex = 78;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
             // FormConfigurarCNX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(879, 593);
+            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.checkBoxAntena4False);
             this.Controls.Add(this.checkBoxAntena4True);
             this.Controls.Add(this.checkBoxAntena3False);
@@ -767,5 +817,7 @@ namespace AntennaSetupAPP.View
         private System.Windows.Forms.CheckBox checkBoxAntena3True;
         private System.Windows.Forms.CheckBox checkBoxAntena4False;
         private System.Windows.Forms.CheckBox checkBoxAntena4True;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonReset;
     }
 }
