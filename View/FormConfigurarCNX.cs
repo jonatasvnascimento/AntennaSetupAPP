@@ -86,6 +86,8 @@ namespace AntennaSetupAPP.View
         private void LoadValuesCNX()
         {
             checkBoxTMR.Checked = true;
+            checkBoxSERIAL.Checked = false;
+            checkBoxTCP.Checked = false;
 
 
             textBoxName.Text = "EDGE50AID";
@@ -128,6 +130,7 @@ namespace AntennaSetupAPP.View
             textBoxImproperTagList.Text = "E0AABBBBFF00002222AAAAAA,E0AABBBBFF00002222AAAAAB,E0AABBBBFF00002222AAAAAC";
 
             checkBoxSendAlwaysReadTagsFalse.Checked = true;
+            checkBoxSendAlwaysReadTagsTrue.Checked = false;
 
             textBoxSpecialParameter.Text = "SINGLE";
 
@@ -136,9 +139,13 @@ namespace AntennaSetupAPP.View
             comboBoxSupplier.Text = comboBoxSupplier.Items[0].ToString();
 
             checkBoxAntena1False.Checked = true;
+            checkBoxAntena1True.Checked = false;
             checkBoxAntena2False.Checked = true;
+            checkBoxAntena2True.Checked = false;
             checkBoxAntena3False.Checked = true;
+            checkBoxAntena3True.Checked = false;
             checkBoxAntena4True.Checked = true;
+            checkBoxAntena4False.Checked = false;
 
         }
 
