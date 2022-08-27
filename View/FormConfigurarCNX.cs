@@ -69,7 +69,7 @@ namespace AntennaSetupAPP.View
                 DirectionAntenaList = new[] { vDirectionAntenaList[0], vDirectionAntenaList[1], vDirectionAntenaList[2], vDirectionAntenaList[3] },
                 AliveTagList = vAliveTagList,
                 ImproperTagList = vImproperTagList,
-                SendAlwaysReadTags = false,
+                SendAlwaysReadTags = vSendAlwaysReadTags,
                 SpecialParameter = vSpecialParameter,
                 Supplier = vSupplier,
                 AntenaList = antenaProps
@@ -88,6 +88,7 @@ namespace AntennaSetupAPP.View
             checkBoxTMR.Checked = true;
             checkBoxSERIAL.Checked = false;
             checkBoxTCP.Checked = false;
+            vConnectionMode = "TMR";
 
 
             textBoxName.Text = "EDGE50AID";
@@ -146,6 +147,8 @@ namespace AntennaSetupAPP.View
             checkBoxAntena3True.Checked = false;
             checkBoxAntena4True.Checked = true;
             checkBoxAntena4False.Checked = false;
+
+            getCNX();
 
         }
 
@@ -423,12 +426,16 @@ namespace AntennaSetupAPP.View
 
         private void checkBoxSendAlwaysReadTagsTrue_Click(object sender, EventArgs e)
         {
+            vSendAlwaysReadTags = true;
             validCheckBox(checkBoxSendAlwaysReadTagsTrue);
+            getCNX();
         }
 
         private void checkBoxSendAlwaysReadTagsFalse_Click(object sender, EventArgs e)
         {
+            vSendAlwaysReadTags = false;
             validCheckBox(checkBoxSendAlwaysReadTagsFalse);
+            getCNX();
         }
 
         private void checkBoxAntena1True_Click(object sender, EventArgs e)
