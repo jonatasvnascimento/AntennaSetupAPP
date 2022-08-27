@@ -85,6 +85,7 @@ namespace AntennaSetupAPP.View
 
         private void LoadValuesCNX()
         {
+
             checkBoxTMR.Checked = true;
             checkBoxSERIAL.Checked = false;
             checkBoxTCP.Checked = false;
@@ -94,20 +95,24 @@ namespace AntennaSetupAPP.View
             textBoxName.Text = "EDGE50AID";
             textBoxIPAddress.Text = "172.16.2.53";
 
-
+            comboBoxIPPort.Items.Clear();
             comboBoxIPPort.Items.Add("5084");
             comboBoxIPPort.Items.Add("8081");
             comboBoxIPPort.Text = comboBoxIPPort.Items[0].ToString();
 
+            comboBoxIPPortA.Items.Clear();
             comboBoxIPPortA.Items.Add("5085");
             comboBoxIPPortA.Text = comboBoxIPPortA.Items[0].ToString();
 
+            comboBoxComPort.Items.Clear();
             comboBoxComPort.Items.AddRange(new object[] { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", });
             comboBoxComPort.Text = comboBoxComPort.Items[0].ToString();
 
+            comboBoxInitialBaudRate.Items.Clear();
             comboBoxInitialBaudRate.Items.Add("115200");
             comboBoxInitialBaudRate.Text = comboBoxInitialBaudRate.Items[0].ToString();
 
+            comboBoxFinalBaudRate.Items.Clear();
             comboBoxFinalBaudRate.Items.Add("115200");
             comboBoxFinalBaudRate.Text = comboBoxFinalBaudRate.Items[0].ToString();
 
@@ -135,18 +140,24 @@ namespace AntennaSetupAPP.View
 
             textBoxSpecialParameter.Text = "SINGLE";
 
+            comboBoxSupplier.Items.Clear();
             comboBoxSupplier.Items.Add("UHF_ThingMagic");
             comboBoxSupplier.Items.Add("UHF_Impinj");
             comboBoxSupplier.Text = comboBoxSupplier.Items[0].ToString();
 
             checkBoxAntena1False.Checked = true;
             checkBoxAntena1True.Checked = false;
+
             checkBoxAntena2False.Checked = true;
             checkBoxAntena2True.Checked = false;
+
             checkBoxAntena3False.Checked = true;
             checkBoxAntena3True.Checked = false;
+
             checkBoxAntena4True.Checked = true;
             checkBoxAntena4False.Checked = false;
+
+            vAntenaList = new List<bool>() { false, false, false, true };
 
             getCNX();
 
