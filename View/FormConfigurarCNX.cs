@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AntennaSetupAPP.Ultils;
 using Newtonsoft.Json;
 using static AntennaSetupAPP.Model.modelCNX;
 
@@ -503,6 +505,11 @@ namespace AntennaSetupAPP.View
             vAntenaList[3] = false;
             validCheckBox(checkBoxAntena4False);
             getCNX();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            ExportTXT.ExportJsonToTxt(Directory.GetCurrentDirectory(), textBoxConfigCNX);
         }
     }
 }

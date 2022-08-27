@@ -674,6 +674,7 @@ namespace AntennaSetupAPP.View
             this.buttonSave.TabIndex = 76;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonReset
             // 
