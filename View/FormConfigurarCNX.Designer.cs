@@ -462,6 +462,7 @@ namespace AntennaSetupAPP.View
             this.textBoxSpecialParameter.Name = "textBoxSpecialParameter";
             this.textBoxSpecialParameter.Size = new System.Drawing.Size(179, 23);
             this.textBoxSpecialParameter.TabIndex = 48;
+            this.textBoxSpecialParameter.TextChanged += new System.EventHandler(this.textBoxSpecialParameter_TextChanged);
             // 
             // label19
             // 
@@ -515,6 +516,7 @@ namespace AntennaSetupAPP.View
             this.comboBoxSupplier.Name = "comboBoxSupplier";
             this.comboBoxSupplier.Size = new System.Drawing.Size(179, 23);
             this.comboBoxSupplier.TabIndex = 62;
+            this.comboBoxSupplier.SelectedIndexChanged += new System.EventHandler(this.comboBoxSupplier_SelectedIndexChanged);
             // 
             // checkBoxTMR
             // 
@@ -525,7 +527,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxTMR.TabIndex = 63;
             this.checkBoxTMR.Text = "TMR";
             this.checkBoxTMR.UseVisualStyleBackColor = true;
-            this.checkBoxTMR.CheckedChanged += new System.EventHandler(this.checkBoxTMR_CheckedChanged);
+            this.checkBoxTMR.Click += new System.EventHandler(this.checkBoxTMR_Click);
             // 
             // checkBoxSERIAL
             // 
@@ -536,7 +538,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxSERIAL.TabIndex = 64;
             this.checkBoxSERIAL.Text = "SERIAL";
             this.checkBoxSERIAL.UseVisualStyleBackColor = true;
-            this.checkBoxSERIAL.CheckedChanged += new System.EventHandler(this.checkBoxSERIAL_CheckedChanged);
+            this.checkBoxSERIAL.Click += new System.EventHandler(this.checkBoxSERIAL_Click);
             // 
             // checkBoxTCP
             // 
@@ -547,7 +549,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxTCP.TabIndex = 65;
             this.checkBoxTCP.Text = "TCP";
             this.checkBoxTCP.UseVisualStyleBackColor = true;
-            this.checkBoxTCP.CheckedChanged += new System.EventHandler(this.checkBoxTCP_CheckedChanged);
+            this.checkBoxTCP.Click += new System.EventHandler(this.checkBoxTCP_Click);
             // 
             // checkBoxSendAlwaysReadTagsTrue
             // 
@@ -558,6 +560,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxSendAlwaysReadTagsTrue.TabIndex = 66;
             this.checkBoxSendAlwaysReadTagsTrue.Text = "TRUE";
             this.checkBoxSendAlwaysReadTagsTrue.UseVisualStyleBackColor = true;
+            this.checkBoxSendAlwaysReadTagsTrue.Click += new System.EventHandler(this.checkBoxSendAlwaysReadTagsTrue_Click);
             // 
             // checkBoxSendAlwaysReadTagsFalse
             // 
@@ -568,6 +571,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxSendAlwaysReadTagsFalse.TabIndex = 67;
             this.checkBoxSendAlwaysReadTagsFalse.Text = "FALSE";
             this.checkBoxSendAlwaysReadTagsFalse.UseVisualStyleBackColor = true;
+            this.checkBoxSendAlwaysReadTagsFalse.Click += new System.EventHandler(this.checkBoxSendAlwaysReadTagsFalse_Click);
             // 
             // checkBoxAntena1True
             // 
@@ -578,6 +582,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena1True.TabIndex = 68;
             this.checkBoxAntena1True.Text = "TRUE";
             this.checkBoxAntena1True.UseVisualStyleBackColor = true;
+            this.checkBoxAntena1True.Click += new System.EventHandler(this.checkBoxAntena1True_Click);
             // 
             // checkBoxAntena1False
             // 
@@ -588,6 +593,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena1False.TabIndex = 69;
             this.checkBoxAntena1False.Text = "FALSE";
             this.checkBoxAntena1False.UseVisualStyleBackColor = true;
+            this.checkBoxAntena1False.Click += new System.EventHandler(this.checkBoxAntena1False_Click);
             // 
             // checkBoxAntena2False
             // 
@@ -598,6 +604,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena2False.TabIndex = 71;
             this.checkBoxAntena2False.Text = "FALSE";
             this.checkBoxAntena2False.UseVisualStyleBackColor = true;
+            this.checkBoxAntena2False.Click += new System.EventHandler(this.checkBoxAntena2False_Click);
             // 
             // checkBoxAntena2True
             // 
@@ -608,6 +615,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena2True.TabIndex = 70;
             this.checkBoxAntena2True.Text = "TRUE";
             this.checkBoxAntena2True.UseVisualStyleBackColor = true;
+            this.checkBoxAntena2True.Click += new System.EventHandler(this.checkBoxAntena2True_Click);
             // 
             // checkBoxAntena3False
             // 
@@ -618,6 +626,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena3False.TabIndex = 73;
             this.checkBoxAntena3False.Text = "FALSE";
             this.checkBoxAntena3False.UseVisualStyleBackColor = true;
+            this.checkBoxAntena3False.Click += new System.EventHandler(this.checkBoxAntena3False_Click);
             // 
             // checkBoxAntena3True
             // 
@@ -628,6 +637,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena3True.TabIndex = 72;
             this.checkBoxAntena3True.Text = "TRUE";
             this.checkBoxAntena3True.UseVisualStyleBackColor = true;
+            this.checkBoxAntena3True.Click += new System.EventHandler(this.checkBoxAntena3True_Click);
             // 
             // checkBoxAntena4False
             // 
@@ -638,6 +648,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena4False.TabIndex = 75;
             this.checkBoxAntena4False.Text = "FALSE";
             this.checkBoxAntena4False.UseVisualStyleBackColor = true;
+            this.checkBoxAntena4False.Click += new System.EventHandler(this.checkBoxAntena4False_Click);
             // 
             // checkBoxAntena4True
             // 
@@ -648,6 +659,7 @@ namespace AntennaSetupAPP.View
             this.checkBoxAntena4True.TabIndex = 74;
             this.checkBoxAntena4True.Text = "TRUE";
             this.checkBoxAntena4True.UseVisualStyleBackColor = true;
+            this.checkBoxAntena4True.Click += new System.EventHandler(this.checkBoxAntena4True_Click);
             // 
             // buttonSave
             // 

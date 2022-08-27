@@ -14,7 +14,7 @@ namespace AntennaSetupAPP.View
 {
     public partial class FormConfigurarCNX : Form
     {
-        string vConnectionMode;
+        string vConnectionMode = "TMR";
         string vName;
         string vIPAddress;
         string vIPPort;
@@ -30,7 +30,7 @@ namespace AntennaSetupAPP.View
         bool vSendAlwaysReadTags;
         string vSpecialParameter;
         string vSupplier;
-        List<bool> vAntenaList;
+        List<bool> vAntenaList = new List<bool>() { false, false, false, true };
 
         CNX config = new CNX();
         public FormConfigurarCNX()
@@ -48,15 +48,15 @@ namespace AntennaSetupAPP.View
             textBoxConfigCNX.ReadOnly = true;
 
             List<AntenaProps> antenaProps = new List<AntenaProps>();
-            antenaProps.Add(new AntenaProps() { Antena = 1, Used = false });
-            antenaProps.Add(new AntenaProps() { Antena = 2, Used = false });
-            antenaProps.Add(new AntenaProps() { Antena = 3, Used = false });
-            antenaProps.Add(new AntenaProps() { Antena = 4, Used = true });
+            antenaProps.Add(new AntenaProps() { Antena = 1, Used = vAntenaList[0] });
+            antenaProps.Add(new AntenaProps() { Antena = 2, Used = vAntenaList[1] });
+            antenaProps.Add(new AntenaProps() { Antena = 3, Used = vAntenaList[2] });
+            antenaProps.Add(new AntenaProps() { Antena = 4, Used = vAntenaList[3] });
 
 
             config = new CNX
             {
-                ConnectionMode = "TMR",
+                ConnectionMode = vConnectionMode,
                 Name = vName,
                 IPAddress = vIPAddress,
                 IPPort = vIPPort,
@@ -161,7 +161,8 @@ namespace AntennaSetupAPP.View
                 {
                     vPositionAntenaList[index] = numAntena;
                     getCNX();
-                }else if (textBox.Name.Contains("DirectionAntenaList"))
+                }
+                else if (textBox.Name.Contains("DirectionAntenaList"))
                 {
                     vDirectionAntenaList[index] = numAntena;
                     getCNX();
@@ -194,6 +195,59 @@ namespace AntennaSetupAPP.View
                 checkBoxTCP.Checked = true;
                 return;
             }
+
+            if (checkBox.Name.Contains("SendAlwaysReadTagsTrue"))
+            {
+                checkBoxSendAlwaysReadTagsTrue.Checked = true;
+                checkBoxSendAlwaysReadTagsFalse.Checked = false;
+            }
+            else if (checkBox.Name.Contains("SendAlwaysReadTagsFalse"))
+            {
+                checkBoxSendAlwaysReadTagsTrue.Checked = false;
+                checkBoxSendAlwaysReadTagsFalse.Checked = true;
+            }
+
+            if (checkBox.Name.Contains("Antena1True"))
+            {
+                checkBoxAntena1True.Checked = true;
+                checkBoxAntena1False.Checked = false;
+            }
+            else if (checkBox.Name.Contains("Antena1False"))
+            {
+                checkBoxAntena1True.Checked = false;
+                checkBoxAntena1False.Checked = true;
+            }
+            else if (checkBox.Name.Contains("Antena2True"))
+            {
+                checkBoxAntena2True.Checked = true;
+                checkBoxAntena2False.Checked = false;
+            }
+            else if (checkBox.Name.Contains("Antena2False"))
+            {
+                checkBoxAntena2True.Checked = false;
+                checkBoxAntena2False.Checked = true;
+            }
+            else if (checkBox.Name.Contains("Antena3True"))
+            {
+                checkBoxAntena3True.Checked = true;
+                checkBoxAntena3False.Checked = false;
+            }
+            else if (checkBox.Name.Contains("Antena3False"))
+            {
+                checkBoxAntena3True.Checked = false;
+                checkBoxAntena3False.Checked = true;
+            }
+            else if (checkBox.Name.Contains("Antena4True"))
+            {
+                checkBoxAntena4True.Checked = true;
+                checkBoxAntena4False.Checked = false;
+            }
+            else if (checkBox.Name.Contains("Antena4False"))
+            {
+                checkBoxAntena4True.Checked = false;
+                checkBoxAntena4False.Checked = true;
+            }
+
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
@@ -321,19 +375,109 @@ namespace AntennaSetupAPP.View
             getCNX();
         }
 
-        private void checkBoxTMR_CheckedChanged(object sender, EventArgs e)
-        {
-            validCheckBox(checkBoxTMR);
-        }
-
-        private void checkBoxSERIAL_CheckedChanged(object sender, EventArgs e)
-        {
-            validCheckBox(checkBoxSERIAL);
-        }
-
         private void checkBoxTCP_CheckedChanged(object sender, EventArgs e)
         {
+
             validCheckBox(checkBoxTCP);
+        }
+
+        private void checkBoxTMR_Click(object sender, EventArgs e)
+        {
+            vConnectionMode = "TMR";
+            validCheckBox(checkBoxTMR);
+            getCNX();
+        }
+
+        private void checkBoxSERIAL_Click(object sender, EventArgs e)
+        {
+            vConnectionMode = "SERIAL";
+            validCheckBox(checkBoxSERIAL);
+            getCNX();
+        }
+
+        private void checkBoxTCP_Click(object sender, EventArgs e)
+        {
+            vConnectionMode = "TCP";
+            validCheckBox(checkBoxTCP);
+            getCNX();
+        }
+
+        private void textBoxSpecialParameter_TextChanged(object sender, EventArgs e)
+        {
+            vSpecialParameter = textBoxSpecialParameter.Text;
+            getCNX();
+        }
+
+        private void comboBoxSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            vSupplier = comboBoxSupplier.Text;
+            getCNX();
+        }
+
+        private void checkBoxSendAlwaysReadTagsTrue_Click(object sender, EventArgs e)
+        {
+            validCheckBox(checkBoxSendAlwaysReadTagsTrue);
+        }
+
+        private void checkBoxSendAlwaysReadTagsFalse_Click(object sender, EventArgs e)
+        {
+            validCheckBox(checkBoxSendAlwaysReadTagsFalse);
+        }
+
+        private void checkBoxAntena1True_Click(object sender, EventArgs e)
+        {
+            vAntenaList[0] = true;
+            validCheckBox(checkBoxAntena1True);
+            getCNX();
+        }
+
+        private void checkBoxAntena1False_Click(object sender, EventArgs e)
+        {
+            vAntenaList[0] = false;
+            validCheckBox(checkBoxAntena1False);
+            getCNX();
+        }
+
+        private void checkBoxAntena2True_Click(object sender, EventArgs e)
+        {
+            vAntenaList[1] = true;
+            validCheckBox(checkBoxAntena2True);
+            getCNX();
+        }
+
+        private void checkBoxAntena2False_Click(object sender, EventArgs e)
+        {
+            vAntenaList[1] = false;
+            validCheckBox(checkBoxAntena2False);
+            getCNX();
+        }
+
+        private void checkBoxAntena3True_Click(object sender, EventArgs e)
+        {
+            vAntenaList[2] = true;
+            validCheckBox(checkBoxAntena3True);
+            getCNX();
+        }
+
+        private void checkBoxAntena3False_Click(object sender, EventArgs e)
+        {
+            vAntenaList[2] = false;
+            validCheckBox(checkBoxAntena3False);
+            getCNX();
+        }
+
+        private void checkBoxAntena4True_Click(object sender, EventArgs e)
+        {
+            vAntenaList[3] = true;
+            validCheckBox(checkBoxAntena4True);
+            getCNX();
+        }
+
+        private void checkBoxAntena4False_Click(object sender, EventArgs e)
+        {
+            vAntenaList[3] = false;
+            validCheckBox(checkBoxAntena4False);
+            getCNX();
         }
     }
 }
