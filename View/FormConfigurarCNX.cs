@@ -509,7 +509,7 @@ namespace AntennaSetupAPP.View
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            ExportTXT.ExportJsonToTxt(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), textBoxConfigCNX);
+            ExportTXT.ExportJsonToTxt(Directory.GetCurrentDirectory(), textBoxConfigCNX);
         }
     }
 }
