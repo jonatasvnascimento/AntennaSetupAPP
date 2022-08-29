@@ -21,28 +21,41 @@ namespace AntennaSetupAPP.Ultils
             // get directory root
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             string root = directoryInfo.Root.ToString();
-
-            string newDirectorySave = $"{path}\\COALARFID\\TESTE";
+            
+            string newDirectorySave = $"{root}\\COALARFID\\TESTE\\";
 
             if (!Directory.Exists(newDirectorySave))
             {
                 Directory.CreateDirectory(newDirectorySave);
             }
 
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "UHFReader|*.UHF_cnx", ValidateNames = true })
+
+            using (TextWriter textWriter = new StreamWriter(new FileStream($"{newDirectorySave}UHFReader.UHF_cnx", FileMode.Create), Encoding.UTF8))
             {
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                foreach (var item in objExport.Text)
                 {
-                    using (TextWriter textWriter = new StreamWriter(new FileStream(saveFileDialog.FileName, FileMode.Create), Encoding.UTF8))
-                    {
-                        foreach (var item in objExport.Text)
-                        {
-                            textWriter.Write($"{item}");
-                        }
-                        MessageBox.Show("Salvo");
-                    }
+                    textWriter.Write($"{item}");
                 }
+                MessageBox.Show("Salvo");
             }
+
+            //File.WriteAllText($"{newDirectorySave}_teste.txt", "Teste");
+
+            //Salvar com SaveFileDialog
+            //using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "UHFReader|*.UHF_cnx", ValidateNames = true })
+            //{
+            //    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        using (TextWriter textWriter = new StreamWriter(new FileStream(saveFileDialog.FileName, FileMode.Create), Encoding.UTF8))
+            //        {
+            //            foreach (var item in objExport.Text)
+            //            {
+            //                textWriter.Write($"{item}");
+            //            }
+            //            MessageBox.Show("Salvo");
+            //        }
+            //    }
+            //}
 
         }
     }
