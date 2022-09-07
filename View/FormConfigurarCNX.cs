@@ -164,6 +164,37 @@ namespace AntennaSetupAPP.View
                         checkBoxAntena1True.Checked = false;
                         checkBoxAntena1False.Checked = true;
                     }
+                    else if (item.Antena == 2 && item.Used == true)
+                    {
+                        checkBoxAntena2True.Checked = true;
+                        checkBoxAntena2False.Checked = false;
+                    }
+                    else if (item.Antena == 2 && item.Used == false)
+                    {
+                        checkBoxAntena2True.Checked = false;
+                        checkBoxAntena2False.Checked = true;
+                    }
+                    else if (item.Antena == 3 && item.Used == true)
+                    {
+                        checkBoxAntena3True.Checked = true;
+                        checkBoxAntena3False.Checked = false;
+                    }
+                    else if (item.Antena == 3 && item.Used == false)
+                    {
+                        checkBoxAntena3True.Checked = false;
+                        checkBoxAntena3False.Checked = true;
+                    }
+                    else if (item.Antena == 4 && item.Used == true)
+                    {
+                        checkBoxAntena4True.Checked = true;
+                        checkBoxAntena4False.Checked = false;
+                    }
+                    else if (item.Antena == 4 && item.Used == false)
+                    {
+                        checkBoxAntena4True.Checked = false;
+                        checkBoxAntena4False.Checked = true;
+                    }
+
                 }
 
             }
