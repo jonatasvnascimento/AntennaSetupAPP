@@ -40,6 +40,15 @@ namespace AntennaSetupAPP.View
         public FormConfigurarCNX()
         {
             InitializeComponent();
+
+            DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
+            string fileDirectory = $"{directoryInfo.FullName}\\Backup\\UHFReader.UHF_cnx";
+
+            if (!File.Exists(fileDirectory))
+            {
+                ExportTXT.SaveBackup(Directory.GetCurrentDirectory(), textBoxConfigCNX);
+            }
+
             var getValuesFromObjJson = ExportTXT.JsonToObject();
             vAntenaList = new List<bool> {
                 getValuesFromObjJson.AntenaList[0].Used,
@@ -156,7 +165,7 @@ namespace AntennaSetupAPP.View
                     checkBoxSendAlwaysReadTagsTrue.Checked = false;
                 }
 
-               
+
 
                 textBoxSpecialParameter.Text = getValuesFromObjJson.SpecialParameter.ToString();
 
@@ -172,7 +181,7 @@ namespace AntennaSetupAPP.View
                         checkBoxAntena1True.Checked = true;
                         checkBoxAntena1False.Checked = false;
                     }
-                    else if(item.Antena == 1 && item.Used == false)
+                    else if (item.Antena == 1 && item.Used == false)
                     {
                         checkBoxAntena1True.Checked = false;
                         checkBoxAntena1False.Checked = true;
@@ -255,7 +264,7 @@ namespace AntennaSetupAPP.View
 
                 };
             }
-          
+
 
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
             textBoxConfigCNX.Text = json;
