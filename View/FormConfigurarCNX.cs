@@ -42,8 +42,129 @@ namespace AntennaSetupAPP.View
 
         private void FormConfigurarCNX_Load(object sender, EventArgs e)
         {
-            LoadValuesCNX();
+            //ResetValues();
+            getConfigFromJsonTXT();
         }
+        public void getConfigFromJsonTXT()
+        {
+            try
+            {
+            var getValuesFromObjJson = ExportTXT.JsonToObject();
+
+            if (getValuesFromObjJson == null)
+            {
+                MessageBox.Show("Sem valores no arquivo");
+            }
+
+            checkBoxTMR.Checked = getValuesFromObjJson.ConnectionMode == "TMR" ? true : false;
+            checkBoxSERIAL.Checked = getValuesFromObjJson.ConnectionMode == "SERIAL" ? true : false;
+            checkBoxTCP.Checked = getValuesFromObjJson.ConnectionMode == "TCP" ? true : false;
+            vConnectionMode = getValuesFromObjJson.ConnectionMode;
+            textBoxName.Text = getValuesFromObjJson.Name;
+            textBoxIPAddress.Text = getValuesFromObjJson.IPAddress;
+
+            comboBoxIPPort.Items.Clear();
+            comboBoxIPPort.Items.Add("5084");
+            comboBoxIPPort.Items.Add("8081");
+            comboBoxIPPort.Text = comboBoxIPPort.Items[getValuesFromObjJson.IPPort == "5084" ? 0 : 1].ToString();
+
+            comboBoxIPPortA.Items.Clear();
+            comboBoxIPPortA.Items.Add("5085");
+            comboBoxIPPortA.Text = comboBoxIPPortA.Items[getValuesFromObjJson.IPPort == "5084" ? 0 : 0].ToString();
+
+            comboBoxComPort.Items.Clear();
+
+            int indexComPort = 0;
+            switch (getValuesFromObjJson.ComPort)
+            {
+                case "COM1":
+                    indexComPort = 0;
+                    break;
+                case "COM2":
+                    indexComPort = 1;
+                    break;
+                case "COM3":
+                    indexComPort = 2;
+                    break;
+                case "COM4":
+                    indexComPort = 3;
+                    break;
+                case "COM5":
+                    indexComPort = 4;
+                    break;
+                case "COM6":
+                    indexComPort = 5;
+                    break;
+                case "COM7":
+                    indexComPort = 6;
+                    break;
+                case "COM8":
+                    indexComPort = 7;
+                    break;
+                default:
+                    break;
+            }
+            comboBoxComPort.Items.AddRange(new object[] { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", });
+            comboBoxComPort.Text = comboBoxComPort.Items[indexComPort].ToString();
+
+            comboBoxInitialBaudRate.Items.Clear();
+            comboBoxInitialBaudRate.Items.Add("115200");
+            comboBoxInitialBaudRate.Text = comboBoxInitialBaudRate.Items[0].ToString();
+
+            comboBoxFinalBaudRate.Items.Clear();
+            comboBoxFinalBaudRate.Items.Add("115200");
+            comboBoxFinalBaudRate.Text = comboBoxFinalBaudRate.Items[0].ToString();
+
+            textBoxKanbanAntenaList1.Text = "1";
+            textBoxKanbanAntenaList2.Text = "2";
+            textBoxKanbanAntenaList3.Text = "0";
+            textBoxKanbanAntenaList4.Text = "0";
+
+            textBoxPositionAntenaList1.Text = "1";
+            textBoxPositionAntenaList2.Text = "2";
+            textBoxPositionAntenaList3.Text = "2";
+            textBoxPositionAntenaList4.Text = "4";
+
+            textBoxDirectionAntenaList1.Text = "1";
+            textBoxDirectionAntenaList2.Text = "1";
+            textBoxDirectionAntenaList3.Text = "2";
+            textBoxDirectionAntenaList4.Text = "2";
+
+            textBoxAliveTagList.Text = "300ED89F3350008CCCD16C71";
+
+            textBoxImproperTagList.Text = "E0AABBBBFF00002222AAAAAA,E0AABBBBFF00002222AAAAAB,E0AABBBBFF00002222AAAAAC";
+
+            checkBoxSendAlwaysReadTagsFalse.Checked = true;
+            checkBoxSendAlwaysReadTagsTrue.Checked = false;
+
+            textBoxSpecialParameter.Text = "SINGLE";
+
+            comboBoxSupplier.Items.Clear();
+            comboBoxSupplier.Items.Add("UHF_ThingMagic");
+            comboBoxSupplier.Items.Add("UHF_Impinj");
+            comboBoxSupplier.Text = comboBoxSupplier.Items[0].ToString();
+
+            checkBoxAntena1False.Checked = true;
+            checkBoxAntena1True.Checked = false;
+
+            checkBoxAntena2False.Checked = true;
+            checkBoxAntena2True.Checked = false;
+
+            checkBoxAntena3False.Checked = true;
+            checkBoxAntena3True.Checked = false;
+
+            checkBoxAntena4True.Checked = true;
+            checkBoxAntena4False.Checked = false;
+
+            vAntenaList = new List<bool>() { false, false, false, true };
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
+        }
+
 
         private void getCNX()
         {
@@ -58,7 +179,7 @@ namespace AntennaSetupAPP.View
             DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
             string fileDirectory = $"{directoryInfo.FullName}\\Backup\\UHFReader.UHF_cnx";
 
-            if (!File.Exists(fileDirectory))
+            if (File.Exists(fileDirectory))
             {
                 config = new CNX
                 {
@@ -84,7 +205,7 @@ namespace AntennaSetupAPP.View
             }
             else
             {
-                config = ExportTXT.JsonToObject();
+
             }
 
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
@@ -96,7 +217,7 @@ namespace AntennaSetupAPP.View
 
 
 
-        private void LoadValuesCNX()
+        private void ResetValues()
         {
 
             checkBoxTMR.Checked = true;
@@ -351,7 +472,7 @@ namespace AntennaSetupAPP.View
 
         private void buttonReset_Click(object sender, EventArgs e)
         {
-            LoadValuesCNX();
+            ResetValues();
         }
 
         private void textBoxPositionAntenaList1_TextChanged(object sender, EventArgs e)
