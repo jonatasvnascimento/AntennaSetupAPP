@@ -49,114 +49,155 @@ namespace AntennaSetupAPP.View
         {
             try
             {
-            var getValuesFromObjJson = ExportTXT.JsonToObject();
+                var getValuesFromObjJson = ExportTXT.JsonToObject();
 
-            if (getValuesFromObjJson == null)
-            {
-                MessageBox.Show("Sem valores no arquivo");
-            }
+                if (getValuesFromObjJson == null)
+                {
+                    MessageBox.Show("Sem valores no arquivo");
+                }
 
-            checkBoxTMR.Checked = getValuesFromObjJson.ConnectionMode == "TMR" ? true : false;
-            checkBoxSERIAL.Checked = getValuesFromObjJson.ConnectionMode == "SERIAL" ? true : false;
-            checkBoxTCP.Checked = getValuesFromObjJson.ConnectionMode == "TCP" ? true : false;
-            vConnectionMode = getValuesFromObjJson.ConnectionMode;
-            textBoxName.Text = getValuesFromObjJson.Name;
-            textBoxIPAddress.Text = getValuesFromObjJson.IPAddress;
+                checkBoxTMR.Checked = getValuesFromObjJson.ConnectionMode == "TMR" ? true : false;
+                checkBoxSERIAL.Checked = getValuesFromObjJson.ConnectionMode == "SERIAL" ? true : false;
+                checkBoxTCP.Checked = getValuesFromObjJson.ConnectionMode == "TCP" ? true : false;
+                vConnectionMode = getValuesFromObjJson.ConnectionMode;
+                textBoxName.Text = getValuesFromObjJson.Name;
+                textBoxIPAddress.Text = getValuesFromObjJson.IPAddress;
 
-            comboBoxIPPort.Items.Clear();
-            comboBoxIPPort.Items.Add("5084");
-            comboBoxIPPort.Items.Add("8081");
-            comboBoxIPPort.Text = comboBoxIPPort.Items[getValuesFromObjJson.IPPort == "5084" ? 0 : 1].ToString();
+                comboBoxIPPort.Items.Clear();
+                comboBoxIPPort.Items.Add("5084");
+                comboBoxIPPort.Items.Add("8081");
+                comboBoxIPPort.Text = comboBoxIPPort.Items[getValuesFromObjJson.IPPort == "5084" ? 0 : 1].ToString();
 
-            comboBoxIPPortA.Items.Clear();
-            comboBoxIPPortA.Items.Add("5085");
-            comboBoxIPPortA.Text = comboBoxIPPortA.Items[getValuesFromObjJson.IPPort == "5084" ? 0 : 0].ToString();
+                comboBoxIPPortA.Items.Clear();
+                comboBoxIPPortA.Items.Add("5085");
+                comboBoxIPPortA.Text = comboBoxIPPortA.Items[getValuesFromObjJson.IPPort == "5084" ? 0 : 0].ToString();
 
-            comboBoxComPort.Items.Clear();
+                comboBoxComPort.Items.Clear();
 
-            int indexComPort = 0;
-            switch (getValuesFromObjJson.ComPort)
-            {
-                case "COM1":
-                    indexComPort = 0;
-                    break;
-                case "COM2":
-                    indexComPort = 1;
-                    break;
-                case "COM3":
-                    indexComPort = 2;
-                    break;
-                case "COM4":
-                    indexComPort = 3;
-                    break;
-                case "COM5":
-                    indexComPort = 4;
-                    break;
-                case "COM6":
-                    indexComPort = 5;
-                    break;
-                case "COM7":
-                    indexComPort = 6;
-                    break;
-                case "COM8":
-                    indexComPort = 7;
-                    break;
-                default:
-                    break;
-            }
-            comboBoxComPort.Items.AddRange(new object[] { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", });
-            comboBoxComPort.Text = comboBoxComPort.Items[indexComPort].ToString();
+                int indexComPort = 0;
+                switch (getValuesFromObjJson.ComPort)
+                {
+                    case "COM1":
+                        indexComPort = 0;
+                        break;
+                    case "COM2":
+                        indexComPort = 1;
+                        break;
+                    case "COM3":
+                        indexComPort = 2;
+                        break;
+                    case "COM4":
+                        indexComPort = 3;
+                        break;
+                    case "COM5":
+                        indexComPort = 4;
+                        break;
+                    case "COM6":
+                        indexComPort = 5;
+                        break;
+                    case "COM7":
+                        indexComPort = 6;
+                        break;
+                    case "COM8":
+                        indexComPort = 7;
+                        break;
+                    default:
+                        break;
+                }
+                comboBoxComPort.Items.AddRange(new object[] { "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", });
+                comboBoxComPort.Text = comboBoxComPort.Items[indexComPort].ToString();
 
-            comboBoxInitialBaudRate.Items.Clear();
-            comboBoxInitialBaudRate.Items.Add("115200");
-            comboBoxInitialBaudRate.Text = comboBoxInitialBaudRate.Items[0].ToString();
+                comboBoxInitialBaudRate.Items.Clear();
+                comboBoxInitialBaudRate.Items.Add("115200");
+                comboBoxInitialBaudRate.Text = comboBoxInitialBaudRate.Items[getValuesFromObjJson.InitialBaudRate == "115200" ? 0 : 0].ToString();
 
-            comboBoxFinalBaudRate.Items.Clear();
-            comboBoxFinalBaudRate.Items.Add("115200");
-            comboBoxFinalBaudRate.Text = comboBoxFinalBaudRate.Items[0].ToString();
+                comboBoxFinalBaudRate.Items.Clear();
+                comboBoxFinalBaudRate.Items.Add("115200");
+                comboBoxFinalBaudRate.Text = comboBoxFinalBaudRate.Items[getValuesFromObjJson.FinalBaudRate == "115200" ? 0 : 0].ToString();
 
-            textBoxKanbanAntenaList1.Text = "1";
-            textBoxKanbanAntenaList2.Text = "2";
-            textBoxKanbanAntenaList3.Text = "0";
-            textBoxKanbanAntenaList4.Text = "0";
 
-            textBoxPositionAntenaList1.Text = "1";
-            textBoxPositionAntenaList2.Text = "2";
-            textBoxPositionAntenaList3.Text = "2";
-            textBoxPositionAntenaList4.Text = "4";
+                textBoxKanbanAntenaList1.Text = getValuesFromObjJson.KanbanAntenaList[0].ToString();
+                textBoxKanbanAntenaList2.Text = getValuesFromObjJson.KanbanAntenaList[1].ToString();
+                textBoxKanbanAntenaList3.Text = getValuesFromObjJson.KanbanAntenaList[2].ToString();
+                textBoxKanbanAntenaList4.Text = getValuesFromObjJson.KanbanAntenaList[3].ToString();
 
-            textBoxDirectionAntenaList1.Text = "1";
-            textBoxDirectionAntenaList2.Text = "1";
-            textBoxDirectionAntenaList3.Text = "2";
-            textBoxDirectionAntenaList4.Text = "2";
+                textBoxPositionAntenaList1.Text = getValuesFromObjJson.PositionAntenaList[0].ToString();
+                textBoxPositionAntenaList2.Text = getValuesFromObjJson.PositionAntenaList[1].ToString();
+                textBoxPositionAntenaList3.Text = getValuesFromObjJson.PositionAntenaList[2].ToString();
+                textBoxPositionAntenaList4.Text = getValuesFromObjJson.PositionAntenaList[3].ToString();
 
-            textBoxAliveTagList.Text = "300ED89F3350008CCCD16C71";
+                textBoxDirectionAntenaList1.Text = getValuesFromObjJson.DirectionAntenaList[0].ToString();
+                textBoxDirectionAntenaList2.Text = getValuesFromObjJson.DirectionAntenaList[1].ToString();
+                textBoxDirectionAntenaList3.Text = getValuesFromObjJson.DirectionAntenaList[2].ToString();
+                textBoxDirectionAntenaList4.Text = getValuesFromObjJson.DirectionAntenaList[3].ToString();
 
-            textBoxImproperTagList.Text = "E0AABBBBFF00002222AAAAAA,E0AABBBBFF00002222AAAAAB,E0AABBBBFF00002222AAAAAC";
+                textBoxAliveTagList.Text = getValuesFromObjJson.AliveTagList.ToString();
 
-            checkBoxSendAlwaysReadTagsFalse.Checked = true;
-            checkBoxSendAlwaysReadTagsTrue.Checked = false;
+                textBoxImproperTagList.Text = getValuesFromObjJson.ImproperTagList.ToString();
 
-            textBoxSpecialParameter.Text = "SINGLE";
+                checkBoxSendAlwaysReadTagsFalse.Checked = getValuesFromObjJson.SendAlwaysReadTags ? true : false;
+                checkBoxSendAlwaysReadTagsTrue.Checked = getValuesFromObjJson.SendAlwaysReadTags ? true : false; ;
 
-            comboBoxSupplier.Items.Clear();
-            comboBoxSupplier.Items.Add("UHF_ThingMagic");
-            comboBoxSupplier.Items.Add("UHF_Impinj");
-            comboBoxSupplier.Text = comboBoxSupplier.Items[0].ToString();
+                textBoxSpecialParameter.Text = getValuesFromObjJson.SpecialParameter.ToString();
 
-            checkBoxAntena1False.Checked = true;
-            checkBoxAntena1True.Checked = false;
+                comboBoxSupplier.Items.Clear();
+                comboBoxSupplier.Items.Add("UHF_ThingMagic");
+                comboBoxSupplier.Items.Add("UHF_Impinj");
+                comboBoxSupplier.Text = comboBoxSupplier.Items[getValuesFromObjJson.Supplier == "UHF_ThingMagic" ? 0 : 1].ToString();
 
-            checkBoxAntena2False.Checked = true;
-            checkBoxAntena2True.Checked = false;
+                foreach (var item in getValuesFromObjJson.AntenaList)
+                {
+                    if (item.Antena == 1 && item.Used == true)
+                    {
+                        checkBoxAntena1True.Checked = true;
+                        checkBoxAntena1False.Checked = false;
+                    }
+                    else
+                    {
+                        checkBoxAntena1True.Checked = false;
+                        checkBoxAntena1False.Checked = true;
+                    }
+                    //if (item.Antena == 2 && item.Used == true)
+                    //{
+                    //    checkBoxAntena2True.Checked = true;
+                    //    checkBoxAntena2False.Checked = false;
+                    //}
+                    //else
+                    //{
+                    //    checkBoxAntena2True.Checked = false;
+                    //    checkBoxAntena2False.Checked = true;
+                    //}
+                    //if (item.Antena == 3 && item.Used == true)
+                    //{
+                    //    checkBoxAntena3True.Checked = true;
+                    //    checkBoxAntena3False.Checked = false;
+                    //}
+                    //else
+                    //{
+                    //    checkBoxAntena3True.Checked = false;
+                    //    checkBoxAntena3False.Checked = true;
+                    //}
+                    //if (item.Antena == 4 && item.Used == true)
+                    //{
+                    //    checkBoxAntena4True.Checked = true;
+                    //    checkBoxAntena4False.Checked = false;
+                    //}
+                    //else
+                    //{
+                    //    checkBoxAntena4True.Checked = false;
+                    //    checkBoxAntena4False.Checked = true;
+                    //}
+                }
 
-            checkBoxAntena3False.Checked = true;
-            checkBoxAntena3True.Checked = false;
 
-            checkBoxAntena4True.Checked = true;
-            checkBoxAntena4False.Checked = false;
+               
 
-            vAntenaList = new List<bool>() { false, false, false, true };
+                List<AntenaProps> antenaProps = new List<AntenaProps>();
+                antenaProps.Add(new AntenaProps() { Antena = 1, Used = vAntenaList[0] });
+                antenaProps.Add(new AntenaProps() { Antena = 2, Used = vAntenaList[1] });
+                antenaProps.Add(new AntenaProps() { Antena = 3, Used = vAntenaList[2] });
+                antenaProps.Add(new AntenaProps() { Antena = 4, Used = vAntenaList[3] });
+
 
             }
             catch (Exception ex)
@@ -169,18 +210,18 @@ namespace AntennaSetupAPP.View
         private void getCNX()
         {
             textBoxConfigCNX.ReadOnly = true;
-
-            List<AntenaProps> antenaProps = new List<AntenaProps>();
-            antenaProps.Add(new AntenaProps() { Antena = 1, Used = vAntenaList[0] });
-            antenaProps.Add(new AntenaProps() { Antena = 2, Used = vAntenaList[1] });
-            antenaProps.Add(new AntenaProps() { Antena = 3, Used = vAntenaList[2] });
-            antenaProps.Add(new AntenaProps() { Antena = 4, Used = vAntenaList[3] });
-
             DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
             string fileDirectory = $"{directoryInfo.FullName}\\Backup\\UHFReader.UHF_cnx";
 
             if (File.Exists(fileDirectory))
             {
+                List<AntenaProps> antenaProps = new List<AntenaProps>() { 
+                        new AntenaProps() { Antena = 1, Used = vAntenaList[0] },
+                        new AntenaProps() { Antena = 2, Used = vAntenaList[1] },
+                        new AntenaProps() { Antena = 3, Used = vAntenaList[2] },
+                        new AntenaProps() { Antena = 4, Used = vAntenaList[3] }
+                };
+
                 config = new CNX
                 {
                     ConnectionMode = vConnectionMode,
@@ -203,10 +244,7 @@ namespace AntennaSetupAPP.View
 
                 };
             }
-            else
-            {
-
-            }
+          
 
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
             textBoxConfigCNX.Text = json;
