@@ -104,6 +104,7 @@ namespace AntennaSetupAPP.View
             this.textBoxConfigCNX.Size = new System.Drawing.Size(397, 569);
             this.textBoxConfigCNX.TabIndex = 2;
             this.textBoxConfigCNX.Text = resources.GetString("textBoxConfigCNX.Text");
+            this.textBoxConfigCNX.TextChanged += new System.EventHandler(this.textBoxConfigCNX_TextChanged);
             // 
             // label1
             // 

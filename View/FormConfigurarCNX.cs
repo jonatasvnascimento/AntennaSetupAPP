@@ -34,6 +34,9 @@ namespace AntennaSetupAPP.View
         string vSupplier;
         List<bool> vAntenaList = new List<bool>() { false, false, false, true };
 
+        bool loadConfig = false;
+        string jsonObject;
+
         CNX config = new CNX();
         public FormConfigurarCNX()
         {
@@ -43,6 +46,7 @@ namespace AntennaSetupAPP.View
         private void FormConfigurarCNX_Load(object sender, EventArgs e)
         {
             LoadValuesCNX();
+           
         }
 
         private void getCNX()
@@ -78,8 +82,13 @@ namespace AntennaSetupAPP.View
 
             };
 
+
+
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
+            jsonObject = json;
             textBoxConfigCNX.Text = json;
+
+
             //CNX deserializedProduct = JsonConvert.DeserializeObject<CNX>(json);
         }
 
@@ -510,6 +519,11 @@ namespace AntennaSetupAPP.View
         private void buttonSave_Click(object sender, EventArgs e)
         {
             ExportTXT.ExportJsonToTxt(Directory.GetCurrentDirectory(), textBoxConfigCNX);
+        }
+
+        private void textBoxConfigCNX_TextChanged(object sender, EventArgs e)
+        {
+            ExportTXT.SaveBackup(Directory.GetCurrentDirectory(), textBoxConfigCNX);
         }
     }
 }
