@@ -32,17 +32,24 @@ namespace AntennaSetupAPP.View
         bool vSendAlwaysReadTags;
         string vSpecialParameter;
         string vSupplier;
-        List<bool> vAntenaList = new List<bool>() { false, false, false, true };
 
+        List<bool> vAntenaList;
+        List<AntenaProps> antenaProps = new List<AntenaProps>();
         CNX config = new CNX();
+
         public FormConfigurarCNX()
         {
             InitializeComponent();
+            var getValuesFromObjJson = ExportTXT.JsonToObject();
+            vAntenaList = new List<bool> {
+                getValuesFromObjJson.AntenaList[0].Used,
+                getValuesFromObjJson.AntenaList[1].Used,
+                getValuesFromObjJson.AntenaList[2].Used,
+                getValuesFromObjJson.AntenaList[3].Used };
         }
 
         private void FormConfigurarCNX_Load(object sender, EventArgs e)
         {
-            //ResetValues();
             getConfigFromJsonTXT();
         }
         public void getConfigFromJsonTXT()
@@ -152,52 +159,12 @@ namespace AntennaSetupAPP.View
                         checkBoxAntena1True.Checked = true;
                         checkBoxAntena1False.Checked = false;
                     }
-                    else
+                    else if(item.Antena == 1 && item.Used == false)
                     {
                         checkBoxAntena1True.Checked = false;
                         checkBoxAntena1False.Checked = true;
                     }
-                    //if (item.Antena == 2 && item.Used == true)
-                    //{
-                    //    checkBoxAntena2True.Checked = true;
-                    //    checkBoxAntena2False.Checked = false;
-                    //}
-                    //else
-                    //{
-                    //    checkBoxAntena2True.Checked = false;
-                    //    checkBoxAntena2False.Checked = true;
-                    //}
-                    //if (item.Antena == 3 && item.Used == true)
-                    //{
-                    //    checkBoxAntena3True.Checked = true;
-                    //    checkBoxAntena3False.Checked = false;
-                    //}
-                    //else
-                    //{
-                    //    checkBoxAntena3True.Checked = false;
-                    //    checkBoxAntena3False.Checked = true;
-                    //}
-                    //if (item.Antena == 4 && item.Used == true)
-                    //{
-                    //    checkBoxAntena4True.Checked = true;
-                    //    checkBoxAntena4False.Checked = false;
-                    //}
-                    //else
-                    //{
-                    //    checkBoxAntena4True.Checked = false;
-                    //    checkBoxAntena4False.Checked = true;
-                    //}
                 }
-
-
-               
-
-                List<AntenaProps> antenaProps = new List<AntenaProps>();
-                antenaProps.Add(new AntenaProps() { Antena = 1, Used = vAntenaList[0] });
-                antenaProps.Add(new AntenaProps() { Antena = 2, Used = vAntenaList[1] });
-                antenaProps.Add(new AntenaProps() { Antena = 3, Used = vAntenaList[2] });
-                antenaProps.Add(new AntenaProps() { Antena = 4, Used = vAntenaList[3] });
-
 
             }
             catch (Exception ex)
@@ -215,7 +182,7 @@ namespace AntennaSetupAPP.View
 
             if (File.Exists(fileDirectory))
             {
-                List<AntenaProps> antenaProps = new List<AntenaProps>() { 
+                this.antenaProps = new List<AntenaProps>() {
                         new AntenaProps() { Antena = 1, Used = vAntenaList[0] },
                         new AntenaProps() { Antena = 2, Used = vAntenaList[1] },
                         new AntenaProps() { Antena = 3, Used = vAntenaList[2] },
