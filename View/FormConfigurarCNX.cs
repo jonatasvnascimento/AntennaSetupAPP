@@ -34,9 +34,6 @@ namespace AntennaSetupAPP.View
         string vSupplier;
         List<bool> vAntenaList = new List<bool>() { false, false, false, true };
 
-        bool loadConfig = false;
-        string jsonObject;
-
         CNX config = new CNX();
         public FormConfigurarCNX()
         {
@@ -46,7 +43,6 @@ namespace AntennaSetupAPP.View
         private void FormConfigurarCNX_Load(object sender, EventArgs e)
         {
             LoadValuesCNX();
-           
         }
 
         private void getCNX()
@@ -59,33 +55,39 @@ namespace AntennaSetupAPP.View
             antenaProps.Add(new AntenaProps() { Antena = 3, Used = vAntenaList[2] });
             antenaProps.Add(new AntenaProps() { Antena = 4, Used = vAntenaList[3] });
 
+            DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
+            string fileDirectory = $"{directoryInfo.FullName}\\Backup\\UHFReader.UHF_cnx";
 
-            config = new CNX
+            if (!File.Exists(fileDirectory))
             {
-                ConnectionMode = vConnectionMode,
-                Name = vName,
-                IPAddress = vIPAddress,
-                IPPort = vIPPort,
-                IPPortA = vIPPortA,
-                ComPort = vComPort,
-                InitialBaudRate = vInitialBaudRate,
-                FinalBaudRate = vFinalBaudRate,
-                KanbanAntenaList = new[] { vKanbanAntenaList[0], vKanbanAntenaList[1], vKanbanAntenaList[2], vKanbanAntenaList[3] },
-                PositionAntenaList = new[] { vPositionAntenaList[0], vPositionAntenaList[1], vPositionAntenaList[2], vPositionAntenaList[3] },
-                DirectionAntenaList = new[] { vDirectionAntenaList[0], vDirectionAntenaList[1], vDirectionAntenaList[2], vDirectionAntenaList[3] },
-                AliveTagList = vAliveTagList,
-                ImproperTagList = vImproperTagList,
-                SendAlwaysReadTags = vSendAlwaysReadTags,
-                SpecialParameter = vSpecialParameter,
-                Supplier = vSupplier,
-                AntenaList = antenaProps
+                config = new CNX
+                {
+                    ConnectionMode = vConnectionMode,
+                    Name = vName,
+                    IPAddress = vIPAddress,
+                    IPPort = vIPPort,
+                    IPPortA = vIPPortA,
+                    ComPort = vComPort,
+                    InitialBaudRate = vInitialBaudRate,
+                    FinalBaudRate = vFinalBaudRate,
+                    KanbanAntenaList = new[] { vKanbanAntenaList[0], vKanbanAntenaList[1], vKanbanAntenaList[2], vKanbanAntenaList[3] },
+                    PositionAntenaList = new[] { vPositionAntenaList[0], vPositionAntenaList[1], vPositionAntenaList[2], vPositionAntenaList[3] },
+                    DirectionAntenaList = new[] { vDirectionAntenaList[0], vDirectionAntenaList[1], vDirectionAntenaList[2], vDirectionAntenaList[3] },
+                    AliveTagList = vAliveTagList,
+                    ImproperTagList = vImproperTagList,
+                    SendAlwaysReadTags = vSendAlwaysReadTags,
+                    SpecialParameter = vSpecialParameter,
+                    Supplier = vSupplier,
+                    AntenaList = antenaProps
 
-            };
-
-
+                };
+            }
+            else
+            {
+                config = ExportTXT.JsonToObject();
+            }
 
             string json = JsonConvert.SerializeObject(config, Formatting.Indented);
-            jsonObject = json;
             textBoxConfigCNX.Text = json;
 
 
