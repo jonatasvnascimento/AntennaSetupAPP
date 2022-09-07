@@ -142,8 +142,21 @@ namespace AntennaSetupAPP.View
 
                 textBoxImproperTagList.Text = getValuesFromObjJson.ImproperTagList.ToString();
 
-                checkBoxSendAlwaysReadTagsFalse.Checked = getValuesFromObjJson.SendAlwaysReadTags ? true : false;
-                checkBoxSendAlwaysReadTagsTrue.Checked = getValuesFromObjJson.SendAlwaysReadTags ? true : false; ;
+
+                if (getValuesFromObjJson.SendAlwaysReadTags == true)
+                {
+                    vSendAlwaysReadTags = true;
+                    checkBoxSendAlwaysReadTagsFalse.Checked = false;
+                    checkBoxSendAlwaysReadTagsTrue.Checked = true;
+                }
+                else
+                {
+                    vSendAlwaysReadTags = false;
+                    checkBoxSendAlwaysReadTagsFalse.Checked = true;
+                    checkBoxSendAlwaysReadTagsTrue.Checked = false;
+                }
+
+               
 
                 textBoxSpecialParameter.Text = getValuesFromObjJson.SpecialParameter.ToString();
 
