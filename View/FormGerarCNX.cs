@@ -15,10 +15,15 @@ namespace AntennaSetupAPP.View
         public FormGerarCNX()
         {
             InitializeComponent();
+            dataGridView1.Rows.Add(new object[] { "select True", "ASSOCIAÇÃO", "C/COALARFID",   "Arquivo criado","Teste OK" });
+            dataGridView1.Rows.Add(new object[] { "select True", "MERCADO", "C/COALARFID",      "Arquivo criado","Teste OK" });
+            dataGridView1.Rows.Add(new object[] { "select True", "SCANOUT", "C/COALARFID",      "Arquivo criado","Teste OK" });
+            dataGridView1.Rows.Add(new object[] { "select True", "WRITETAG", "C/COALARFID",     "Arquivo criado","Teste OK" });
         }
 
         private void FormGerarCNX_Load(object sender, EventArgs e)
         {
+           
         }
     }
 }
