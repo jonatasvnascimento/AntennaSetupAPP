@@ -16,5 +16,9 @@ namespace AntennaSetupAPP.View
         {
             InitializeComponent();
         }
+
+        private void FormGerarCNX_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
