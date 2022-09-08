@@ -31,8 +31,9 @@ namespace AntennaSetupAPP.View
                 List<string> nameApplication = new List<string>();
                 List<string> dirApplaication = new List<string>();
 
-                DirectoryInfo directoryInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
-                string DirectoryApplication = $@"{directoryInfo.Root}\COALARFID";
+                DirectoryInfo DirectoryApplicationInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
+                string DirectoryApplication = $@"{DirectoryApplicationInfo.Root}\COALARFID";
+
 
                 if (!Directory.Exists(DirectoryApplication))
                 {
@@ -48,16 +49,18 @@ namespace AntennaSetupAPP.View
                     dirApplaication.Add(dir);
                 }
 
+
                 for (int i = 0; i < dirs.Length; i++)
                 {
-                    dataGridView1.Rows.Add(new object[] { nameApplication[i], dirApplaication[i], "Arquivo criado", "Teste OK" });
+                    DirectoryInfo DateModifyandCreate = new DirectoryInfo(dirApplaication[i]);
+                    dataGridView1.Rows.Add(new object[] { nameApplication[i], dirApplaication[i], DateModifyandCreate.LastWriteTime, DateModifyandCreate.CreationTime });
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex}");
             }
-            
+
 
         }
 
@@ -75,7 +78,7 @@ namespace AntennaSetupAPP.View
             {
                 MessageBox.Show($"{ex}");
             }
-           
+
         }
     }
 }
