@@ -109,14 +109,14 @@ namespace AntennaSetupAPP.View
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.FillWeight = 50F;
-            this.Column4.HeaderText = "File";
+            this.Column4.HeaderText = "Modify";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.FillWeight = 50F;
-            this.Column5.HeaderText = "Testing";
+            this.Column5.HeaderText = "Create";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 

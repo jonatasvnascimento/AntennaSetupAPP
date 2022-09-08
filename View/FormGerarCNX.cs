@@ -13,6 +13,7 @@ namespace AntennaSetupAPP.View
 {
     public partial class FormGerarCNX : Form
     {
+        public string pathApplicationSelection { get; set; }
         public FormGerarCNX()
         {
             InitializeComponent();
@@ -67,8 +68,7 @@ namespace AntennaSetupAPP.View
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-
-                    MessageBox.Show($"{row.Cells["System"].Value}");
+                    pathApplicationSelection = row.Cells["Column3"].Value.ToString();
                 }
             }
             catch (Exception ex)
