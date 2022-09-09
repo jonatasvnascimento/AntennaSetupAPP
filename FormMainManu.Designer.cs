@@ -39,6 +39,7 @@ namespace AntennaSetupAPP
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
+            this.buttonExitX = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -172,12 +173,28 @@ namespace AntennaSetupAPP
             this.panelDesktopPanel.Size = new System.Drawing.Size(879, 593);
             this.panelDesktopPanel.TabIndex = 2;
             // 
+            // buttonExitX
+            // 
+            this.buttonExitX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.buttonExitX.FlatAppearance.BorderSize = 0;
+            this.buttonExitX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExitX.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonExitX.ForeColor = System.Drawing.Color.White;
+            this.buttonExitX.Location = new System.Drawing.Point(1056, -3);
+            this.buttonExitX.Name = "buttonExitX";
+            this.buttonExitX.Size = new System.Drawing.Size(23, 24);
+            this.buttonExitX.TabIndex = 4;
+            this.buttonExitX.Text = "X";
+            this.buttonExitX.UseVisualStyleBackColor = false;
+            this.buttonExitX.Click += new System.EventHandler(this.buttonExitX_Click);
+            // 
             // FormMainManu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1079, 659);
+            this.Controls.Add(this.buttonExitX);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
@@ -210,6 +227,7 @@ namespace AntennaSetupAPP
         private System.Windows.Forms.Panel panelDesktopPanel;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Label labelVersion;
+        private System.Windows.Forms.Button buttonExitX;
     }
 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace AntennaSetupAPP.View
     public partial class FormGerarCNX : Form
     {
         public string pathApplicationSelection { get; set; }
+        public string newDirectorySaveUHF { get; set; }
+        public string folderConfig { get; set; }
         public FormGerarCNX()
         {
             InitializeComponent();
@@ -28,7 +31,7 @@ namespace AntennaSetupAPP.View
         {
             try
             {
-                
+
 
                 List<string> nameApplication = new List<string>();
                 List<string> dirApplaication = new List<string>();
@@ -91,7 +94,7 @@ namespace AntennaSetupAPP.View
                     Directory.CreateDirectory(directoryCondig);
                 }
 
-                string newDirectorySaveUHF = $@"{pathApplicationSelection}\config\UHFReader.UHF_cnx";
+                newDirectorySaveUHF = $@"{pathApplicationSelection}\config\UHFReader.UHF_cnx";
 
                 if (File.Exists(newDirectorySaveUHF))
                 {
@@ -104,7 +107,7 @@ namespace AntennaSetupAPP.View
             {
                 MessageBox.Show($"{ex}");
             }
-           
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -122,6 +125,41 @@ namespace AntennaSetupAPP.View
                 MessageBox.Show($"{ex}");
             }
         }
+
+        private void buttonOpenFolderSystem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(pathApplicationSelection))
+                {
+                    DirectoryInfo directoryInfo = new DirectoryInfo(pathApplicationSelection);
+                    folderConfig = $@"{directoryInfo}\config";
+
+                    if (!Directory.Exists(folderConfig))
+                    {
+                        MessageBox.Show("Diretorio não existe");
+                        return;
+                    }
+
+                    Process.Start(new ProcessStartInfo()
+                    {
+                        FileName = folderConfig,
+                        UseShellExecute = true,
+                        Verb = "open"
+                    });
+
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um diretorio");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
+           
+
+        }
     }
-}
-;
+};

@@ -28,7 +28,6 @@ namespace AntennaSetupAPP
         private const int WM_ACTIVATEAPP = 0x001C;
 
         private Form activeForm;
-        private Button currentbutton;
 
         private string Version = "1.0.0.0";
 
@@ -40,6 +39,7 @@ namespace AntennaSetupAPP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            labelTitulo.Text = "";
             labelVersion.Text = Version;
         }
         private void OpenChildForm(Form childForm, object btnSender)
@@ -168,6 +168,11 @@ namespace AntennaSetupAPP
             {
                 labelVersion.Text = "Jonatas";
             }
+        }
+
+        private void buttonExitX_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
