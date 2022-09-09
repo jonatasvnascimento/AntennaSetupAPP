@@ -28,6 +28,8 @@ namespace AntennaSetupAPP.View
         {
             try
             {
+                
+
                 List<string> nameApplication = new List<string>();
                 List<string> dirApplaication = new List<string>();
 
@@ -55,6 +57,11 @@ namespace AntennaSetupAPP.View
                     DirectoryInfo DateModifyandCreate = new DirectoryInfo(dirApplaication[i]);
                     dataGridView1.Rows.Add(new object[] { nameApplication[i], dirApplaication[i], DateModifyandCreate.LastWriteTime, DateModifyandCreate.CreationTime });
                 }
+
+                if (dataGridView1.Rows.Count >= 0)
+                {
+                    dataGridView1.Rows[0].Selected = false;
+                }
             }
             catch (Exception ex)
             {
@@ -63,8 +70,44 @@ namespace AntennaSetupAPP.View
 
 
         }
+        private void buttonSaveUHF_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(pathApplicationSelection))
+                {
+                    MessageBox.Show("Selecione um caminho");
+                    return;
+                }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+                DirectoryInfo directoryCurrent = new DirectoryInfo(Directory.GetCurrentDirectory());
+                string FileCopyToFolder = $@"{directoryCurrent.FullName}\Backup\UHFReader.UHF_cnx";
+
+                DirectoryInfo directorySave = new DirectoryInfo(pathApplicationSelection);
+                string directoryCondig = $@"{directorySave}\config";
+
+                if (!Directory.Exists(directoryCondig))
+                {
+                    Directory.CreateDirectory(directoryCondig);
+                }
+
+                string newDirectorySaveUHF = $@"{pathApplicationSelection}\config\UHFReader.UHF_cnx";
+
+                if (File.Exists(newDirectorySaveUHF))
+                {
+                    File.Delete(newDirectorySaveUHF);
+                }
+
+                File.Copy(FileCopyToFolder, newDirectorySaveUHF);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
+           
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -78,7 +121,6 @@ namespace AntennaSetupAPP.View
             {
                 MessageBox.Show($"{ex}");
             }
-
         }
     }
 }
