@@ -20,29 +20,21 @@ namespace AntennaSetupAPP.Ultils
                 return;
             }
 
-            // get directory root
-            DirectoryInfo directoryInfo = new DirectoryInfo(path);
-
-
-            string root = directoryInfo.Root.ToString();
-
-            string newDirectorySave = $"{root}\\COALARFID\\TESTE\\";
-
-            if (!Directory.Exists(newDirectorySave))
+            //Salvar com SaveFileDialog
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "UHFReader|*.UHF_cnx", ValidateNames = true })
             {
-                Directory.CreateDirectory(newDirectorySave);
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (TextWriter textWriter = new StreamWriter(new FileStream(saveFileDialog.FileName, FileMode.Create), Encoding.UTF8))
+                    {
+                        foreach (var item in objExport.Text)
+                        {
+                            textWriter.Write($"{item}");
+                        }
+                        MessageBox.Show("Salvo");
+                    }
+                }
             }
-
-            //using (TextWriter textWriter = new StreamWriter(new FileStream($"{newDirectorySave}UHFReader.UHF_cnx", FileMode.Create), Encoding.UTF8))
-            //{
-            //    foreach (var item in objExport.Text)
-            //    {
-            //        textWriter.Write($"{item}");
-            //    }
-            //    MessageBox.Show("Salvo");
-            //}
-
-            File.WriteAllText($"{newDirectorySave}UHFReader.UHF_cnx", objExport.Text);
 
         }
         public static void SaveBackup(string path, TextBox objExport)
