@@ -134,6 +134,7 @@ namespace AntennaSetupAPP.View
                 {
                     DirectoryInfo directoryInfo = new DirectoryInfo(pathApplicationSelection);
                     folderConfig = $@"{directoryInfo}\config";
+                    labelPathFolder.Text = folderConfig;
 
                     if (!Directory.Exists(folderConfig))
                     {
